@@ -1,0 +1,137 @@
+
+/* managing primeng inputs size to max*/
+.max-width {
+  width: 100%;
+}
+
+/* labeled primeng inputs fix*/
+.p-labeled-input>* {
+  display: block;
+}
+
+/* Togglebutton settings*/
+.p-togglebutton {
+  background-color: var(--togglebutton-color-back) !important;
+  color: var(--text-color) !important;
+  border-color: var(--input-border-color) !important;
+}
+
+.p-togglebutton.p-highlight {
+  background-color: var(--togglebutton-color-face) !important;
+  color: var(--text-color) !important;
+  border-color: var(--input-border-color) !important;
+}
+
+
+/* Password component doesn't have password-panel (weak, medium, strong) */
+.hide-password-panel .p-password-panel {
+  display: none !important;
+}
+
+/* Dialog styles */
+.p-dialog {
+  border: 1px solid var(--dialog-border-color);
+}
+
+.p-dialog .p-dialog-content {
+
+  background-color: var(--dialog-background-color) !important;
+  color: var(--text-color) !important;
+  padding: 0 !important;
+  padding-bottom: 10px !important;
+  overflow-wrap: anywhere;
+}
+
+.p-dialog .p-dialog-header {
+  background-color: var(--dialog-background-color) !important;
+  color: var(--text-color) !important;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon {
+  color: var(--text-color) !important;
+}
+
+.p-dialog .p-dialog-footer {
+  background-color: var(--dialog-background-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* tab styles */
+.p-tabview-panels {
+  background-color: var(--tab-background-color) !important;
+  color: var(--text-color) !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  background-color: var(--tab-background-color);
+  color: var(--text-color)
+}
+
+.p-tabview .p-tabview-nav {
+  border: none;
+}
+
+/* Remove focus*/
+.p-tabview-nav-link:focus,
+.p-datatable .p-sortable-column:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* change focus*/
+.p-focus,
+.p-link:focus {
+  border: 1px solid var(--focus-border-color) !important;
+  box-shadow: 0 0 0 0.1rem rgba(147, 185, 224, 0.5) !important;
+  outline: none !important;
+}
+
+.p-inputtext:enabled:focus {
+  border-color: var(--input-border-color) !important;
+}
+
+/* Confirm buttons styles for primeng confirm dialog */
+.confirmation-yes-button {
+  background-color: #218838;
+  color: var(--text-color) !important;
+  border-color: #24d824;
+}
+
+.confirmation-no-button {
+  background-color: #C82333;
+  color: var(--text-color) !important;
+  border-color: #c47e16;
+}
+
+/* basic (primary) button hover */
+.p-button:enabled:hover {
+  background: var(--primary-color-hover) !important;
+  color: var(--text-color) !important;
+  border-color: var(--button-border-color) !important;
+}
+
+/* danger button hover */
+.p-button.p-button-danger:enabled:hover,
+.p-buttonset.p-button-danger>.p-button:enabled:hover,
+.p-splitbutton.p-button-danger>.p-button:enabled:hover {
+  background: var(--danger-color-hover)!important;
+  color: var(--text-color) !important;
+  border-color: var(--button-border-color) !important;
+}
+
+/* success button hover */
+.p-button.p-button-success:enabled:hover,
+.p-buttonset.p-button-success>.p-button:enabled:hover,
+.p-splitbutton.p-button-success>.p-button:enabled:hover {
+  background: var(--success-color-hover) !important;
+  color: var(--text-color) !important;
+  border-color: var(--button-border-color) !important;
+}
+
+/* prime ng file-upload button hover */
+.p-file-upload:hover {
+  background: var(--primary-color-hover)!important;
+  color: var(--text-color) !important;
+  border-color: var(--button-border-color) !important;
+}
