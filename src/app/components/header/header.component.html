@@ -1,1 +1,53 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg  nav-header">
+  <div class="container-fluid">
+    <a class="navbar-brand logo" routerLink="/home" routerLinkActive="active">
+    <span class="kj-text">KJ</span>
+    <img [src]="'./assets/images/brain-icon.png'" class="brain-icon" />
+    <span class="developer-text">Developer</span>
+
+    </a>
+    <button class="navbar-toggler toggle-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/game" routerLinkActive="active">{{'Game' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/daily-task" routerLinkActive="active">{{'DailyTask' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/stats" routerLinkActive="active">{{'Stats' | translate }}</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+
+        <div class="button-container me-2">
+          <button routerLink="/login" class="glow-on-hover">{{ 'Login' | translate
+            }}</button>
+        </div>
+        <div class="button-container me-2">
+          <button routerLink="/register" class="glow-on-hover">{{ 'Registration' | translate
+            }}</button>
+        </div>
+
+       <!--  Language switch -->
+       <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage"  [style]="{'width':'100%'}">
+        <ng-template pTemplate="selectedItem">
+          <div class="flex align-items-center" *ngIf="selectedLanguage">
+            <img [src]="'./assets/images/languages/' + selectedLanguage.code + '.png'" style="width: 20px"/>
+            <span class="mx-2">{{ selectedLanguage.name | translate }}</span>
+          </div>
+      </ng-template>
+        <ng-template let-language pTemplate="item">
+            <div class="flex align-items-start text-start" (click)="switchLang(language.code)">
+                <img [src]="'./assets/images/languages/' + language.code + '.png'" style="width: 20px" />
+                <span class="mx-2">{{ language.name | translate }}</span>
+            </div>
+        </ng-template>
+    </p-dropdown>
+      </div>
+    </div>
+  </div>
+</nav>

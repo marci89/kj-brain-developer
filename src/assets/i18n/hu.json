@@ -59,7 +59,6 @@
   "RegisterSuccess": "Sikeres regisztráció",
   "Chart": "Diagram",
   "Table": "Táblázat",
-
   "InvalidRequest": "Érvénytelen kérés.",
   "ServerError": "Hoppá! Valami hiba történt. Kérlek, próbáld újra később.",
   "AccessDenied": "Hozzáférés megtagadva",
@@ -80,6 +79,19 @@
   "InvalidEmailFormat": "Kérlek, adj meg egy érvényes email címet.",
   "NoUsernameOrEmailExists": "Nem létezik ilyen felhasználónév vagy e-mail cím",
 
+
+
+  "Game": "Játék",
+  "DailyTask": "Napi feladat",
+  "Practice": "Gyakorlás",
+  "Stats": "Statisztika",
+
+  "HomeModule": {
+    "Discover": "Fedezze fel, mire képes az elméje",
+    "Description": "Gyakorolja a memóriát, a rugalmasságot és még sok mást a világ legnépszerűbb agytorna programjával.",
+    "GetStarted": "Fogj neki most",
+    "Free": "Teljesen ingyenes"
+  },
 
   "cookie": {
     "header": "Sütik használata a webhelyen!",

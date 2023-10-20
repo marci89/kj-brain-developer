@@ -1,0 +1,46 @@
+.logo{
+font-size: 20px;
+}
+
+.kj-text {
+  color:wheat;
+  font-size: 35px;
+}
+
+.brain-icon{
+  width: 40px;
+}
+
+.developer-text{
+  color: wheat;
+}
+
+.nav-link {
+  color: white;
+  font-size: 20px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: white;
+  text-shadow:
+    0 0 0px #8eb8e9,
+    0 0 1px #8eb8e9,
+    0 0 10px #8eb8e9,
+    0 0 15px #4e85c4,
+    0 0 16px #4e85c4,
+    0 0 9px #4e85c4,
+    0 0 2px #4e85c4,
+    0 0 7px #4e85c4;
+}
+
+.toggle-icon.navbar-toggler {
+  border-color: #28ee39 ;
+  background-color: gray;
+}
+
+@media (max-width: 767px) {
+  .d-flex {
+    flex-direction: column;
+  }
+}

@@ -1,7 +1,6 @@
 {
   "Hungarian": "Hungarian",
   "English": "English",
-
   "LanguageDateFormat": "dd-MM-yyyy HH:mm",
   "Home": "Home",
   "Login": "Login",
@@ -60,7 +59,6 @@
   "RegisterSuccess" : "You Have Successfully Registered.",
   "Chart": "Chart",
   "Table": "Table",
-
   "InvalidRequest": "The request is invalid.",
   "ServerError" : "Oops! Something went wrong on our end. Please try again later.",
   "AccessDenied": "Access Denied.",
@@ -80,6 +78,20 @@
   "EmailExists": "Email is already registered. Please use a different email.",
   "InvalidEmailFormat": "Please enter a valid email address.",
   "NoUsernameOrEmailExists": "No such username or email exists",
+
+
+
+  "Game": "Game",
+  "DailyTask": "Daily task",
+  "Practice": "Practice",
+  "Stats": "Stats",
+
+  "HomeModule": {
+    "Discover": "Discover what your mind can do",
+    "Description": "Exercise memory, flexibility, and more with the world’s most popular brain training program.",
+    "GetStarted": "Get started",
+    "Free": "Completely free"
+  },
 
   "cookie": {
     "header": "Cookies used on the website!",

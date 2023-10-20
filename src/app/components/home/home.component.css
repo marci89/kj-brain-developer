@@ -1,0 +1,32 @@
+.header {
+  background-color: #134D55;
+  width: 100%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  color: white;
+  position: absolute;
+}
+
+.main-title {
+  font-size: 70px;
+  width: 50%;
+}
+
+.description-text {
+  width: 50%;
+}
+
+@media (max-width: 767px) {
+  .header {
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+
+  .main-title{
+    font-size: 40px;
+  }
+  .main-title,
+  .description-text {
+    width: 100%;
+  }
+}
