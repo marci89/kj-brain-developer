@@ -1,1 +1,56 @@
-<p>user-login works!</p>
+
+<div class="container">
+<div class="row justify-content-center mt-5">
+  <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-5 col-xxl-5">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+            <h2 class="text-center">{{'Login' | translate }}</h2>
+            <hr>
+
+            <!-- Any error -->
+            <div *ngIf="serverError" class="alert alert-danger">
+              {{ serverError | translate}}
+            </div>
+
+            <!-- User name or email -->
+            <div class="mb-3">
+              <label for="identifier">{{'UsernameOrEmail' | translate }}</label>
+             <input type="text" pInputText formControlName="identifier" class="form-control">
+              <div *ngIf="loginForm.get('identifier')?.errors && loginForm.get('identifier')?.touched" class="text-danger">
+                <p *ngIf="loginForm.get('identifier')?.hasError('required')">{{'UsernameOrEmailRequired' | translate }}</p>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password">{{'Password' | translate }}</label>
+          <p-password type="password" [toggleMask]="true"  formControlName="password" styleClass="hide-password-panel" inputStyleClass="form-control"
+          [style]="{'width':'100%'}" ></p-password>
+              <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched" class="text-danger">
+                <p *ngIf="loginForm.get('password')?.hasError('required')"> {{'PasswordRequired' | translate }}</p>
+              </div>
+            </div>
+
+               <!-- Buttons -->
+               <div class="d-flex justify-content-center mt-3">
+                <div class="button-container me-2">
+                  <button [disabled]="!loginForm.valid" class="orange-glow-animation" type="submit">{{ 'Login'
+                    | translate
+                    }}</button>
+                </div>
+                <div class="small-button-container">
+                  <button class="red-glow-animation" (click)="cancel()" type="button">{{ 'Cancel' | translate
+                    }}</button>
+                </div>
+              </div>
+
+            <div class="text-center mt-2">
+              <span class="forgot-password" routerLink="/forgot-password" >{{'ForgotPassword' | translate }}</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

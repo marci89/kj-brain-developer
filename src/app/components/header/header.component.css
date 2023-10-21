@@ -33,3 +33,8 @@ font-size: 20px;
     0 0 2px #4e85c4,
     0 0 7px #4e85c4;
 }
+
+.dropdown-toggle, .dropdown-item {
+  cursor: pointer;
+}
+
