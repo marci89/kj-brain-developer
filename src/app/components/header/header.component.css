@@ -33,14 +33,3 @@ font-size: 20px;
     0 0 2px #4e85c4,
     0 0 7px #4e85c4;
 }
-
-.toggle-icon.navbar-toggler {
-  border-color: #28ee39 ;
-  background-color: gray;
-}
-
-@media (max-width: 767px) {
-  .d-flex {
-    flex-direction: column;
-  }
-}

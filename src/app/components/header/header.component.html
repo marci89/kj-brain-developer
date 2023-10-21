@@ -1,53 +1,69 @@
-<nav class="navbar navbar-expand-lg  nav-header">
-  <div class="container-fluid">
+<header class="navbar navbar-expand-md navbar-dark bd-navbar nav-header">
+  <nav class="container-fluid flex-wrap flex-md-nowrap" aria-label="Main navigation">
+    <!-- KJ brain logo -->
     <a class="navbar-brand logo" routerLink="/home" routerLinkActive="active">
-    <span class="kj-text">KJ</span>
-    <img [src]="'./assets/images/brain-icon.png'" class="brain-icon" />
-    <span class="developer-text">Developer</span>
-
+      <span class="kj-text">KJ</span>
+      <img [src]="'./assets/images/brain-icon.png'" class="brain-icon" />
+      <span class="developer-text">Developer</span>
     </a>
-    <button class="navbar-toggler toggle-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+
+    <!-- toggle button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bdNavbar"
+      aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars fa-lg mx-2"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+
+    <div class="collapse navbar-collapse" id="bdNavbar">
+      <!-- links -->
+      <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
+        <li class="nav-item col-6 col-md-auto">
           <a class="nav-link" routerLink="/game" routerLinkActive="active">{{'Game' | translate }}</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item col-6 col-md-auto">
           <a class="nav-link" routerLink="/daily-task" routerLinkActive="active">{{'DailyTask' | translate }}</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item col-6 col-md-auto">
+          <a class="nav-link" routerLink="/practice" routerLinkActive="active">{{'Practice' | translate }}</a>
+        </li>
+        <li class="nav-item col-6 col-md-auto">
           <a class="nav-link" routerLink="/stats" routerLinkActive="active">{{'Stats' | translate }}</a>
         </li>
       </ul>
-      <div class="d-flex">
 
-        <div class="button-container me-2">
-          <button routerLink="/login" class="glow-on-hover">{{ 'Login' | translate
-            }}</button>
-        </div>
-        <div class="button-container me-2">
-          <button routerLink="/register" class="glow-on-hover">{{ 'Registration' | translate
-            }}</button>
-        </div>
-
-       <!--  Language switch -->
-       <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage"  [style]="{'width':'100%'}">
-        <ng-template pTemplate="selectedItem">
-          <div class="flex align-items-center" *ngIf="selectedLanguage">
-            <img [src]="'./assets/images/languages/' + selectedLanguage.code + '.png'" style="width: 20px"/>
-            <span class="mx-2">{{ selectedLanguage.name | translate }}</span>
+      <hr class="d-md-none text-white-50">
+      <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+        <!--  Login -->
+        <li class="nav-item col-6 col-md-auto mt-2">
+          <div class="button-container me-2 mb-2">
+            <button routerLink="/login" class="orange-glow-animation">{{ 'Login' | translate
+              }}</button>
           </div>
-      </ng-template>
-        <ng-template let-language pTemplate="item">
-            <div class="flex align-items-start text-start" (click)="switchLang(language.code)">
+        </li>
+        <!--  Register -->
+        <li class="nav-item col-6 col-md-auto mt-2 me-3">
+          <div class="button-container me-2 mb-2">
+            <button routerLink="/register" class="orange-glow-animation">{{ 'Registration' | translate
+              }}</button>
+          </div>
+        </li>
+        <!--  Language switch -->
+        <li class="nav-item col-6 col-md-auto mt-2 me-3">
+          <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage" [style]="{'width':'150px'}">
+            <ng-template pTemplate="selectedItem">
+              <div class="flex align-items-center" *ngIf="selectedLanguage">
+                <img [src]="'./assets/images/languages/' + selectedLanguage.code + '.png'" style="width: 20px" />
+                <span class="mx-2">{{ selectedLanguage.name | translate }}</span>
+              </div>
+            </ng-template>
+            <ng-template let-language pTemplate="item">
+              <div class="flex align-items-start text-start" (click)="switchLang(language.code)">
                 <img [src]="'./assets/images/languages/' + language.code + '.png'" style="width: 20px" />
                 <span class="mx-2">{{ language.name | translate }}</span>
-            </div>
-        </ng-template>
-    </p-dropdown>
-      </div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </li>
+      </ul>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
