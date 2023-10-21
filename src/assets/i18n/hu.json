@@ -78,6 +78,8 @@
   "EmailExists": "Ez az email cím már regisztrálva van. Kérlek, használj másik email címet.",
   "InvalidEmailFormat": "Kérlek, adj meg egy érvényes email címet.",
   "NoUsernameOrEmailExists": "Nem létezik ilyen felhasználónév vagy e-mail cím",
+  "ChooseAnAvatar": "Válasszon egy profilképet",
+  "Language": "Nyelv",
 
 
 

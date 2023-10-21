@@ -1,0 +1,19 @@
+.avatar{
+  width: 120px;
+  height: 120px;
+}
+
+.avatar:hover{
+border: 2px solid orangered;
+}
+
+.avatar-active{
+  border: 2px solid orangered;
+}
+
+@media (max-width: 990px) {
+  .avatar{
+    width: 75px;
+    height: 75px;
+  }
+}

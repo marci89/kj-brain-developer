@@ -30,3 +30,9 @@ export interface ResetPasswordRequest {
   password: string;
   token?: string;
 }
+
+//avatar
+export interface Avatar {
+  id: number;
+  imageUrl: string;
+}

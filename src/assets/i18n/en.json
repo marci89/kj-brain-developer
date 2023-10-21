@@ -78,7 +78,8 @@
   "EmailExists": "Email is already registered. Please use a different email.",
   "InvalidEmailFormat": "Please enter a valid email address.",
   "NoUsernameOrEmailExists": "No such username or email exists",
-
+  "ChooseAnAvatar": "Choose an avatar",
+  "Language": "Language",
 
 
   "Game": "Game",

@@ -1,1 +1,121 @@
-<p>user-register works!</p>
+<div class="container">
+  <div class="row justify-content-center mt-2">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
+            <h2 class="text-center">{{'Registration' | translate }}</h2>
+            <hr>
+
+            <!-- Any error -->
+            <div *ngIf="serverError" class="alert alert-danger">
+              {{ serverError | translate}}
+            </div>
+
+            <div class="row">
+              <!-- User name -->
+              <div class="col-12 col-sm-12 col-lg-6 mt-2">
+                <label for="username">{{'Username' | translate }}</label>
+                <input type="text" pInputText formControlName="username" maxlength="50" class="form-control">
+                <div *ngIf="registerForm.get('username')?.errors && registerForm.get('username')?.touched"
+                  class="text-danger">
+                  <span *ngIf="registerForm.get('username')?.hasError('required')">{{'UsernameRequired' | translate
+                    }}</span>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="col-12 col-sm-12 col-lg-6 mt-2">
+                <label for="email"> {{'Email' | translate }} </label>
+                <input type="text" pInputText formControlName="email" class="form-control">
+                <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched"
+                  class="text-danger">
+                  <span *ngIf="registerForm.get('email')?.hasError('required')">{{'EmailRequired' | translate }}</span>
+                  <span *ngIf="registerForm.get('email')?.hasError('email')"> {{'InvalidEmailFormat' | translate
+                    }}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row ">
+              <!-- Password -->
+              <div class="col-12 col-sm-12 col-lg-4 mt-2">
+                <label for="password">{{'Password' | translate }}</label>
+                <p-password type="password" [toggleMask]="true" formControlName="password"
+                  inputStyleClass="form-control" [style]="{'width':'100%'}"></p-password>
+                <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched"
+                  class="text-danger">
+                  <span *ngIf="registerForm.get('password')?.hasError('required')"> {{'PasswordRequired' | translate
+                    }}</span>
+                  <span *ngIf="registerForm.get('password')?.hasError('minlength')"> {{'InvalidPasswordFormat' |
+                    translate }}
+                  </span>
+                </div>
+              </div>
+
+              <!--  Confirm password -->
+              <div class="col-12 col-sm-12 col-lg-4 mt-2">
+                <label for="confirmPassword">{{'ConfirmPassword' | translate }}</label>
+                <p-password type="password" [toggleMask]="true" formControlName="confirmPassword"
+                  styleClass="hide-password-panel" inputStyleClass="form-control" [style]="{'width':'100%'}">
+                </p-password>
+                <div *ngIf="registerForm.get('confirmPassword')?.errors && registerForm.get('confirmPassword')?.touched"
+                  class="text-danger">
+                  <span *ngIf="registerForm.get('confirmPassword')?.hasError('required')"> {{'ConfirmPasswordRequired' |
+                    translate }}</span>
+                  <span *ngIf="registerForm.get('confirmPassword')?.hasError('isMatching')"> {{'PasswordNotMatch' |
+                    translate
+                    }}</span>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-4 mt-2">
+                <!--  Language choose -->
+
+                <label for="language">{{'Language' | translate }}</label>
+                <p-dropdown [options]="languages" formControlName="language" [style]="{'width':'100%'}">
+                  <ng-template pTemplate="selectedItem">
+                    <div class="flex align-items-center" *ngIf="registerForm.get('language')?.value">
+                      <img [src]="'./assets/images/languages/'+ registerForm.get('language')?.value.code + '.png'"
+                        style="width: 20px" />
+                      <span class="mx-2">{{ registerForm.get('language')?.value.name | translate }}</span>
+                    </div>
+                  </ng-template>
+                  <ng-template let-language pTemplate="item">
+                    <div class="flex align-items-start text-start" (click)="chooseLang(language.code)">
+                      <img [src]="'./assets/images/languages/' + language.code + '.png'" style="width: 20px" />
+                      <span class="mx-2">{{ language.name | translate }}</span>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
+            </div>
+
+            <!--  Avatar choose -->
+            <div class="text-center mt-4">
+              <h4>{{ 'ChooseAnAvatar' | translate }}</h4>
+            </div>
+            <div class="row">
+              <div *ngFor="let avatar of avatars" class="col-3 col-sm-3 col-md-3 col-lg-3 text-center mx-auto mb-3">
+                <img [src]="avatar.imageUrl" class="avatar" (click)="selectAvatar(avatar.id)" [class.avatar-active]="avatar.id === selectedAvatarId"/>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+              <div class="d-flex justify-content-center mt-3">
+                <div class="button-container me-2">
+                  <button [disabled]="!registerForm.valid" class="orange-glow-animation" type="submit">{{ 'Registration'
+                    | translate
+                    }}</button>
+                </div>
+                <div class="small-button-container">
+                  <button class="red-glow-animation" (click)="cancel()" type="button">{{ 'Cancel' | translate
+                    }}</button>
+                </div>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

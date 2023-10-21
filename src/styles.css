@@ -31,3 +31,12 @@
   --success-color-hover: #234723;
   --danger-color-hover: #a82e1e;
 }
+
+
+body {
+  background-color: #bbbec2;
+}
+
+p, label {
+  font-weight: bold;
+}
