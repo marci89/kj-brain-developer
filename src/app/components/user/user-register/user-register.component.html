@@ -101,17 +101,10 @@
               </div>
             </div>
 
-            <!-- Buttons -->
-              <div class="d-flex justify-content-center mt-3">
-                <div class="button-container me-2">
-                  <button [disabled]="!registerForm.valid" class="orange-glow-animation" type="submit">{{ 'Registration'
-                    | translate
-                    }}</button>
-                </div>
-                <div class="small-button-container">
-                  <button class="red-glow-animation" (click)="cancel()" type="button">{{ 'Cancel' | translate
-                    }}</button>
-                </div>
+               <!-- Buttons -->
+               <div class="text-center mt-3">
+                <p-button [disabled]="!registerForm.valid" styleClass="p-button-oranged me-2" type="submit">{{'Registration' | translate }}</p-button>
+                <p-button styleClass="p-button-danger" (click)="cancel()" type="button">{{'Cancel' | translate }}</p-button>
               </div>
           </form>
         </div>

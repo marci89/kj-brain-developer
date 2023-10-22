@@ -11,15 +11,15 @@
 
 /* Togglebutton settings*/
 .p-togglebutton {
-  background-color: var(--togglebutton-color-back) !important;
-  color: var(--text-color) !important;
-  border-color: var(--input-border-color) !important;
+  background-color: #a82e1e !important;
+  color: white !important;
+  border-color: aliceblue !important;
 }
 
 .p-togglebutton.p-highlight {
-  background-color: var(--togglebutton-color-face) !important;
-  color: var(--text-color) !important;
-  border-color: var(--input-border-color) !important;
+  background-color: #007bff !important;
+  color: white !important;
+  border-color: aliceblue !important;
 }
 
 
@@ -30,41 +30,41 @@
 
 /* Dialog styles */
 .p-dialog {
-  border: 1px solid var(--dialog-border-color);
+  border: 1px solid #134D55;
 }
 
 .p-dialog .p-dialog-content {
 
-  background-color: var(--dialog-background-color) !important;
-  color: var(--text-color) !important;
+  background-color: #ced3c6ee !important;
+  color: black !important;
   padding: 0 !important;
   padding-bottom: 10px !important;
   overflow-wrap: anywhere;
 }
 
 .p-dialog .p-dialog-header {
-  background-color: var(--dialog-background-color) !important;
-  color: var(--text-color) !important;
+  background-color: #ced3c6ee !important;
+  color:black !important;
 }
 
 .p-dialog .p-dialog-header .p-dialog-header-icon {
-  color: var(--text-color) !important;
+  color: black !important;
 }
 
 .p-dialog .p-dialog-footer {
-  background-color: var(--dialog-background-color) !important;
-  color: var(--text-color) !important;
+  background-color: #ced3c6ee !important;
+  color: black !important;
 }
 
 /* tab styles */
 .p-tabview-panels {
-  background-color: var(--tab-background-color) !important;
-  color: var(--text-color) !important;
+  background-color: #585759 !important;
+  color: white !important;
 }
 
 .p-tabview .p-tabview-nav li .p-tabview-nav-link {
-  background-color: var(--tab-background-color);
-  color: var(--text-color)
+  background-color: #585759;
+  color: white
 }
 
 .p-tabview .p-tabview-nav {
@@ -82,56 +82,90 @@
 /* change focus*/
 .p-focus,
 .p-link:focus {
-  border: 1px solid var(--focus-border-color) !important;
+  border: 1px solid aqua !important;
   box-shadow: 0 0 0 0.1rem rgba(147, 185, 224, 0.5) !important;
   outline: none !important;
 }
 
 .p-inputtext:enabled:focus {
-  border-color: var(--input-border-color) !important;
+  border-color: aliceblue !important;
 }
 
 /* Confirm buttons styles for primeng confirm dialog */
 .confirmation-yes-button {
   background-color: #218838;
-  color: var(--text-color) !important;
+  color: white !important;
   border-color: #24d824;
 }
 
 .confirmation-no-button {
   background-color: #C82333;
-  color: var(--text-color) !important;
+  color: white !important;
   border-color: #c47e16;
 }
 
-/* basic (primary) button hover */
-.p-button:enabled:hover {
-  background: var(--primary-color-hover) !important;
-  color: var(--text-color) !important;
-  border-color: var(--button-border-color) !important;
+/* oranged button */
+.p-button-oranged {
+  background: rgb(207, 107, 24) !important;
+  color: white!important;
+  font-size: 20px;
+  border-color: transparent !important;
+  padding: 10px !important;
+}
+.p-button-oranged:enabled:hover {
+  background: rgb(153, 80, 20) !important;
+  color: white!important;
+  border: 1px solid white !important;
+  font-size: 20px;
 }
 
-/* danger button hover */
+
+
+/* danger button */
+.p-button.p-button-danger{
+  background: rgb(214, 33, 33) !important;
+  color: white!important;
+  font-size: 20px;
+  border-color: transparent !important;
+  padding: 10px !important;
+}
+
 .p-button.p-button-danger:enabled:hover,
 .p-buttonset.p-button-danger>.p-button:enabled:hover,
 .p-splitbutton.p-button-danger>.p-button:enabled:hover {
-  background: var(--danger-color-hover)!important;
-  color: var(--text-color) !important;
-  border-color: var(--button-border-color) !important;
+  background: #a02e1f !important;
+  color: white !important;
+  border-color: white !important;
 }
 
-/* success button hover */
+
+/* success button */
+.p-button.p-button-success{
+  background: rgb(46, 139, 37) !important;
+  color: white!important;
+  font-size: 20px;
+  border-color: transparent !important;
+  padding: 10px !important;
+}
+
 .p-button.p-button-success:enabled:hover,
 .p-buttonset.p-button-success>.p-button:enabled:hover,
 .p-splitbutton.p-button-success>.p-button:enabled:hover {
-  background: var(--success-color-hover) !important;
-  color: var(--text-color) !important;
-  border-color: var(--button-border-color) !important;
+  background: #234723!important;
+  color: white !important;
+  border-color: white !important;
 }
 
 /* prime ng file-upload button hover */
 .p-file-upload:hover {
-  background: var(--primary-color-hover)!important;
-  color: var(--text-color) !important;
-  border-color: var(--button-border-color) !important;
+  background: #3b629c !important;
+  color: white !important;
+  border-color: white !important;
+}
+
+/* remove focus shadow */
+.p-button.p-button-danger:enabled:focus,
+.p-button.p-button-success:enabled:focus,
+.p-button:focus {
+  box-shadow: none !important;
 }

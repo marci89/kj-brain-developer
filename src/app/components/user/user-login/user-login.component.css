@@ -1,10 +1,10 @@
 .forgot-password {
-  color: orangered;
+  color: #0E91A1;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .forgot-password:hover {
-  color: rgb(204, 82, 38);
-  text-decoration: underline;
+  color: #0a3941;
+  cursor: pointer;
 }

@@ -28,8 +28,8 @@
     </div>
 
     <!-- Buttons -->
-    <div class="text-center">
-      <p-button [disabled]="!changeEmailForm.valid" class="me-2" type="submit">{{'Edit' | translate }}</p-button>
+    <div class="text-center mt-3">
+      <p-button [disabled]="!changeEmailForm.valid" styleClass="p-button-oranged me-2" type="submit">{{'Edit' | translate }}</p-button>
       <p-button styleClass="p-button-danger" (click)="cancel()" type="button">{{'Cancel' | translate }}</p-button>
     </div>
   </form>

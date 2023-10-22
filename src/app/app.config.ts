@@ -10,13 +10,13 @@ export const cookieConfig: NgcCookieConsentConfig = {
   theme: "classic",
   palette: {
     popup: {
-      background: "#000000",
+      background: "#134D55",
       text: "#ffffff",
       link: "#ffffff"
     },
     button: {
-      background: "#f1d600",
-      text: "#000000",
+      background: "#CF6B18",
+      text: "#ffffff",
       border: "transparent"
     }
   },

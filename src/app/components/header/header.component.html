@@ -48,20 +48,16 @@
           </ul>
         </div>
 
-        <!--  Login -->
+        <!--  Login button -->
         <li *ngIf="!(accountService.currentUser$ | async)" class="nav-item col-6 col-md-auto mt-2">
-          <div class="button-container me-2 mb-2">
-            <button routerLink="/login" class="orange-glow-animation">{{ 'Login' | translate
-              }}</button>
-          </div>
+          <p-button styleClass="p-button-oranged" class="my-2 my-md-0 ms-md-3" routerLink="/login"> {{'Login' | translate }} </p-button>
         </li>
-        <!--  Register -->
+
+        <!--  Register button -->
         <li *ngIf="!(accountService.currentUser$ | async)" class="nav-item col-6 col-md-auto mt-2 me-3">
-          <div class="button-container me-2 mb-2">
-            <button routerLink="/register" class="orange-glow-animation">{{ 'Registration' | translate
-              }}</button>
-          </div>
+          <p-button styleClass="p-button-oranged" class="my-2 my-md-0 ms-md-3" routerLink="/register"> {{'Registration' | translate }} </p-button>
         </li>
+
         <!--  Language switch -->
         <li *ngIf="!(accountService.currentUser$ | async)" class="nav-item col-6 col-md-auto mt-2 me-3">
           <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage" [style]="{'width':'150px'}">
