@@ -1,1 +1,148 @@
-<p>user-edit works!</p>
+<div class="container mb-3">
+  <div class="row justify-content-center mt-2">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center">{{'EditProfile' | translate }}</h2>
+          <hr>
+          <form [formGroup]="userProfileForm" (ngSubmit)="updateUser()" autocomplete="off">
+
+            <div class="row">
+              <!-- User name -->
+              <div class="col-12 col-sm-12 col-lg-6 mt-2">
+                <label for="username">{{ 'Username' | translate }}</label>
+                <input type="text" pInputText formControlName="username" maxlength="50" class="form-control">
+                <div *ngIf="userProfileForm.get('username')?.errors && userProfileForm.get('username')?.touched"
+                  class="text-danger">
+                  <p *ngIf="userProfileForm.get('username')?.hasError('required')">{{ 'UsernameRequired' | translate }}
+                  </p>
+                </div>
+              </div>
+
+              <!--  Language choose -->
+              <div class="col-12 col-sm-12 col-lg-6 mt-2">
+                <label for="language">{{'Language' | translate }}</label>
+                <p-dropdown [options]="languages" formControlName="language" [style]="{'width':'100%'}">
+                  <ng-template pTemplate="selectedItem">
+                    <div class="flex align-items-center" *ngIf="userProfileForm.get('language')?.value">
+                      <img [src]="'./assets/images/languages/'+ userProfileForm.get('language')?.value.code + '.png'"
+                        style="width: 20px" />
+                      <span class="mx-2">{{ userProfileForm.get('language')?.value.name | translate }}</span>
+                    </div>
+                  </ng-template>
+                  <ng-template let-language pTemplate="item">
+                    <div class="flex align-items-start text-start">
+                      <img [src]="'./assets/images/languages/' + language.code + '.png'" style="width: 20px" />
+                      <span class="mx-2">{{ language.name | translate }}</span>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
+            </div>
+
+            <!--  Avatar choose -->
+            <div class="text-center mt-4">
+              <h4>{{ 'ChooseAnAvatar' | translate }}</h4>
+            </div>
+            <div class="row">
+              <div *ngFor="let avatar of avatars" class="col-3 col-sm-3 col-md-3 col-lg-3 text-center mx-auto mb-3">
+                <img [src]="avatar.imageUrl" class="avatar" (click)="selectAvatar(avatar.id)"
+                  [class.avatar-active]="avatar.id === selectedAvatarId" />
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="d-flex justify-content-center mt-3">
+              <div class="button-container me-2">
+                <button class="orange-glow-animation" type="submit">{{ 'Edit'
+                  | translate
+                  }}</button>
+              </div>
+            </div>
+          </form>
+
+          <hr>
+
+          <!-- Email change dialog button -->
+          <div class="text-center mt-2 mb-2">
+            <h4>{{loginedUser?.email}}</h4>
+            <div class="d-flex justify-content-center mt-3">
+              <div class="large-button-container me-2">
+                <button class="orange-glow-animation" type="button" (click)="openChangeEmailDialog()">{{ 'ChangeEmail'
+                  | translate
+                  }}</button>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+          <form [formGroup]="changePasswordForm" (ngSubmit)="changePassword()" autocomplete="off">
+            <div class="row">
+
+              <!-- Current password -->
+              <div class="col-12 col-sm-12 col-lg-4 mt-2">
+                <label for="currentPassword">{{'CurrentPassword' | translate }}</label>
+                <p-password type="password" [toggleMask]="true" inputStyleClass="form-control"
+                  [style]="{'width':'100%'}" styleClass="hide-password-panel"
+                  formControlName="currentPassword"></p-password>
+                <div
+                  *ngIf="changePasswordForm.get('currentPassword')?.errors && changePasswordForm.get('currentPassword')?.touched"
+                  class="text-danger">
+                  <p *ngIf="changePasswordForm.get('currentPassword')?.hasError('required')"> {{'PasswordRequired' |
+                    translate }}</p>
+                  <p *ngIf="changePasswordForm.get('currentPassword')?.hasError('minlength')"> {{'InvalidPasswordFormat'
+                    |
+                    translate }}</p>
+                </div>
+              </div>
+
+              <!-- New password -->
+              <div class="col-12 col-sm-12 col-lg-4 mt-2">
+                <label for="newPassword">{{'NewPassword' | translate }}</label>
+                <p-password type="password" [toggleMask]="true" inputStyleClass="form-control"
+                  [style]="{'width':'100%'}" formControlName="newPassword"></p-password>
+                <div
+                  *ngIf="changePasswordForm.get('newPassword')?.errors && changePasswordForm.get('newPassword')?.touched"
+                  class="text-danger">
+                  <p *ngIf="changePasswordForm.get('newPassword')?.hasError('required')"> {{'PasswordRequired' |
+                    translate
+                    }}</p>
+                  <p *ngIf="changePasswordForm.get('newPassword')?.hasError('minlength')"> {{'InvalidPasswordFormat' |
+                    translate }}</p>
+                </div>
+              </div>
+
+              <!-- Confirm password -->
+              <div class="col-12 col-sm-12 col-lg-4 mt-2">
+                <label for="confirmPassword">{{'ConfirmPassword' | translate }}</label>
+                <p-password type="password" [toggleMask]="true" inputStyleClass="form-control"
+                  [style]="{'width':'100%'}" formControlName="confirmPassword"
+                  styleClass="hide-password-panel"></p-password>
+                <div
+                  *ngIf="changePasswordForm.get('confirmPassword')?.errors && changePasswordForm.get('confirmPassword')?.touched"
+                  class="text-danger">
+                  <p *ngIf="changePasswordForm.get('confirmPassword')?.hasError('required')">
+                    {{'ConfirmPasswordRequired'
+                    |
+                    translate }}</p>
+                  <p *ngIf="changePasswordForm.get('confirmPassword')?.hasError('isMatching')"> {{'PasswordNotMatch' |
+                    translate }}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="d-flex justify-content-center mt-3">
+              <div class="large-button-container me-2">
+                <button [disabled]="!changePasswordForm.valid" class="orange-glow-animation" type="submit">{{
+                  'ChangePassword'
+                  | translate
+                  }}</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

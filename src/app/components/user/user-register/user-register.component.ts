@@ -71,10 +71,11 @@ export class UserRegisterComponent implements OnInit {
 
   //User create (registration)
   register() {
+    const language = this.registerForm.controls['language'].value;
+
     this.createUserRequest = this.registerForm.value;
     this.createUserRequest.avatarId = this.selectedAvatarId;
-    this.createUserRequest.language = this.selectedLanguage.code;
-    console.log(this.createUserRequest);
+    this.createUserRequest.language = language.code;
 
     this.accountService.register(this.createUserRequest).subscribe({
       next: _ => {
@@ -85,11 +86,6 @@ export class UserRegisterComponent implements OnInit {
         this.serverError = error.error;
       }
     })
-  }
-
-  //Change language
-  chooseLang(lang: string) {
-    console.log(lang)
   }
 
   //select avatar

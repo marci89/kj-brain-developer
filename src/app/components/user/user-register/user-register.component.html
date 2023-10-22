@@ -82,7 +82,7 @@
                     </div>
                   </ng-template>
                   <ng-template let-language pTemplate="item">
-                    <div class="flex align-items-start text-start" (click)="chooseLang(language.code)">
+                    <div class="flex align-items-start text-start">
                       <img [src]="'./assets/images/languages/' + language.code + '.png'" style="width: 20px" />
                       <span class="mx-2">{{ language.name | translate }}</span>
                     </div>

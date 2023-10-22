@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ChangeEmailRequest, ChangePasswordRequest, ForgotPasswordRequest, LoginUser, ResetPasswordRequest } from '../interfaces/account.interface';
 import { BaseService } from './base.service';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from './language.service';
 
 //Account service
 @Injectable({
@@ -17,7 +18,7 @@ export class AccountService extends BaseService {
   private currentUserSource = new BehaviorSubject<LoginUser | null>(null);
   currentUser$ = this.currentUserSource.asObservable();
 
-  constructor(private http: HttpClient, private translate: TranslateService) {
+  constructor(private http: HttpClient, private translate: TranslateService, private languageService: LanguageService) {
     super();
   }
 
@@ -87,6 +88,7 @@ export class AccountService extends BaseService {
   // set the current logined user
   setCurrentUser(user: LoginUser) {
     if (user && user.token) {
+      this.languageService.switchLanguage(user.language);
       localStorage.setItem(this.USER_STORAGE_KEY, JSON.stringify(user))
       this.currentUserSource.next(user);
     } else {
