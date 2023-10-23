@@ -84,6 +84,8 @@ export class LanguageService implements OnInit {
 
   //Get current language
   getSelectedLanguage(): Language | undefined {
+    const storedLanguage = localStorage.getItem('selectedLanguage') || this.translate.getDefaultLang();
+    this.selectedLanguage = this.languages.find(language => language.code === storedLanguage);
     return this.selectedLanguage;
   }
 

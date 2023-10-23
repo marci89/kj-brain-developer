@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: 'user/edit', component: UserEditComponent },
     ]
   },
-  { path: '**', component: HomeComponent, pathMatch: 'full' }
+   { path: '**', component: HomeComponent, pathMatch: 'full' }
 ];
 
 

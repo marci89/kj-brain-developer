@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { AccountService } from 'src/app/common/services/account.service';
 import { LanguageService } from 'src/app/common/services/language.service';
 
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     public accountService: AccountService,
     private router: Router,
-    private languageService: LanguageService) { }
+    private languageService: LanguageService
+    ) { }
 
   ngOnInit() {
     this.languages = this.languageService.getLanguages();
@@ -26,6 +28,7 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.accountService.logout();
     this.router.navigateByUrl("/login");
+    this.selectedLanguage = this.languageService.getSelectedLanguage();
   }
 
   //Change language

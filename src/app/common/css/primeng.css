@@ -82,7 +82,7 @@
 /* change focus*/
 .p-focus,
 .p-link:focus {
-  border: 1px solid aqua !important;
+  border: 1px solid #3B82F6 !important;
   box-shadow: 0 0 0 0.1rem rgba(147, 185, 224, 0.5) !important;
   outline: none !important;
 }
@@ -168,4 +168,11 @@
 .p-button.p-button-success:enabled:focus,
 .p-button:focus {
   box-shadow: none !important;
+}
+
+/* Set focus outline on all primeng elements */
+.p-inputtext:enabled:focus,
+.p-dropdown:enabled:focus {
+border-color: #3B82F6 !important;
+box-shadow: none !important;
 }

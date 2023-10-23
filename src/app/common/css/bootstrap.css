@@ -9,6 +9,12 @@
   background-color: #ced3c6ee !important;
 }
 
+.alert-danger{
+  background-color: rgb(214, 33, 33) !important;
+  border: 1px solid white;
+  color: white;
+}
+
 /* Set focus outline on all Bootstrap elements */
 .btn:focus,
 .nav-link:focus,
@@ -17,5 +23,5 @@
 .dropdown-toggle:focus,
 .navbar-toggler:focus,
 .custom-control-input:focus {
-border-color: aqua !important;
+border-color: #3B82F6  !important;
 }

@@ -46,7 +46,7 @@ export class AccountService extends BaseService {
     // Get the current language from ngx-translate
     const selectedLanguage = this.translate.currentLang;
     const headers = new HttpHeaders({
-      'Accept-Language': selectedLanguage
+      'Accept-Language': request.language
     });
 
     return this.http.post<LoginUser>(this.baseUrl + 'account/register', request, {headers}).pipe(

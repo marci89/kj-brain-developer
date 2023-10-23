@@ -131,11 +131,11 @@ export class UserEditComponent implements OnInit, OnDestroy {
 
     this.userService.update(this.updateUserRequest).subscribe({
       next: _ => {
+        this.languageService.switchLanguage(language.code);
         this.toastr.success(this.translate.instant('EditSuccess'))
         this.accountService.updateCurrentUser('username', this.updateUserRequest.username);
         this.accountService.updateCurrentUser('avatarId', this.updateUserRequest.avatarId);
         this.accountService.updateCurrentUser('language', language.code);
-        this.languageService.switchLanguage(language.code);
       },
       error: error => {
         this.toastr.error(this.translate.instant(error.error))
