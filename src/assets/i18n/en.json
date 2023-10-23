@@ -80,6 +80,12 @@
   "NoUsernameOrEmailExists": "No such username or email exists",
   "ChooseAnAvatar": "Choose an avatar",
   "Language": "Language",
+  "Search": "Search",
+  "AllResult": "All result",
+  "AgreeToTerms": "By signing up, you agree to our ",
+  "TermsofService": "Terms of Service",
+  "And": "and",
+  "PrivacyPolicy": "Privacy Policy",
 
 
   "Game": "Game",

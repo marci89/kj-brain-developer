@@ -97,15 +97,29 @@
             </div>
             <div class="row">
               <div *ngFor="let avatar of avatars" class="col-3 col-sm-3 col-md-3 col-lg-3 text-center mx-auto mb-3">
-                <img [src]="avatar.imageUrl" class="avatar" (click)="selectAvatar(avatar.id)" [class.avatar-active]="avatar.id === selectedAvatarId"/>
+                <img [src]="avatar.imageUrl" class="avatar" (click)="selectAvatar(avatar.id)"
+                  [class.avatar-active]="avatar.id === selectedAvatarId" />
               </div>
             </div>
 
-               <!-- Buttons -->
-               <div class="text-center mt-3">
-                <p-button [disabled]="!registerForm.valid" styleClass="p-button-oranged me-2" type="submit">{{'Registration' | translate }}</p-button>
-                <p-button styleClass="p-button-danger" (click)="cancel()" type="button">{{'Cancel' | translate }}</p-button>
-              </div>
+            <!-- Terms -->
+            <div class="mb-3 mt-3">
+              <p-checkbox formControlName="acceptTerms" value="false" inputId="acceptTerms"></p-checkbox>
+              <label for="acceptTerms" style="margin-left: 5px;">
+                {{'AgreeToTerms' | translate }}
+                <a class="term-link" routerLink="/terms-of-service" target="_blank"> {{'TermsofService' | translate
+                  }}</a> {{'And' | translate }}
+                <a class="term-link" routerLink="/privacy-policy" target="_blank">{{'PrivacyPolicy' | translate }}</a>.
+              </label>
+            </div>
+
+            <!-- Buttons -->
+            <div class="text-center mt-3">
+              <p-button [disabled]="!registerForm.valid" styleClass="p-button-oranged me-2"
+                type="submit">{{'Registration' | translate }}</p-button>
+              <p-button styleClass="p-button-danger" (click)="cancel()" type="button">{{'Cancel' | translate
+                }}</p-button>
+            </div>
           </form>
         </div>
       </div>

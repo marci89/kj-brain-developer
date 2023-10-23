@@ -1,0 +1,10 @@
+a {
+  color: rgb(197, 156, 79);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: rgb(197, 156, 79);
+  text-decoration: underline;
+}

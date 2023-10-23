@@ -20,7 +20,9 @@ import { UserEditComponent } from './components/user/user-edit/user-edit.compone
 import { UserLoginComponent } from './components/user/user-login/user-login.component';
 import { UserRegisterComponent } from './components/user/user-register/user-register.component';
 import { HomeComponent } from './components/home/home.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { PrivacyPolicyComponent } from './components/shared/privacy-policy/privacy-policy.component';
+import { TermsOfServiceComponent } from './components/shared/terms-of-service/terms-of-service.component';
 
 
 
@@ -36,7 +38,9 @@ import { HeaderComponent } from './components/header/header.component';
     UserLoginComponent,
     UserRegisterComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    PrivacyPolicyComponent,
+    TermsOfServiceComponent
   ],
   imports: [
     BrowserModule,

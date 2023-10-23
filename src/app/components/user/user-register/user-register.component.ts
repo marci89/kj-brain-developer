@@ -55,6 +55,7 @@ export class UserRegisterComponent implements OnInit {
       password: new FormControl('', [Validators.required, Validators.minLength(4)]),
       confirmPassword: new FormControl('', [Validators.required, this.matchValues('password')]),
       language: new FormControl(this.selectedLanguage, Validators.required),
+      acceptTerms: new FormControl('', Validators.required)
     });
 
     this.registerForm.controls['password'].valueChanges.subscribe({

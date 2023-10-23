@@ -11,6 +11,18 @@ border: 2px solid orangered;
   border: 3px solid orangered;
 }
 
+a {
+  color: rgb(197, 156, 79);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: rgb(197, 156, 79);
+  text-decoration: underline;
+}
+
+
 @media (max-width: 990px) {
   .avatar{
     width: 75px;

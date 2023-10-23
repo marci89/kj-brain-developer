@@ -16,6 +16,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { PasswordModule } from 'primeng/password';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToggleButtonModule } from 'primeng/togglebutton';
+import { CheckboxModule } from 'primeng/checkbox';
 
 import {NgcCookieConsentModule} from 'ngx-cookieconsent';
 import { cookieConfig } from '../app.config';
@@ -49,6 +50,7 @@ import { cookieConfig } from '../app.config';
     PasswordModule,
     InputTextModule,
     ToggleButtonModule,
+    CheckboxModule,
     NgcCookieConsentModule.forRoot(cookieConfig),
   ],
   exports: [
@@ -67,6 +69,7 @@ import { cookieConfig } from '../app.config';
     PasswordModule,
     InputTextModule,
     ToggleButtonModule,
+    CheckboxModule,
     NgcCookieConsentModule
   ]
 })
