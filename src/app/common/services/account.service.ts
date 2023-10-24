@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
 import { LoginRequest, RegistrationRequest } from '../../interfaces/user.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ChangeEmailRequest, ChangePasswordRequest, ForgotPasswordRequest, LoginUser, ResetPasswordRequest } from '../interfaces/account.interface';
+import { ChangeEmailRequest, ChangePasswordRequest, DeleteAccountRequest, ForgotPasswordRequest, LoginUser, ResetPasswordRequest } from '../interfaces/account.interface';
 import { BaseService } from './base.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './language.service';
@@ -115,5 +115,11 @@ export class AccountService extends BaseService {
       (currentUser as any)[propertyName] = newValue;
       this.setCurrentUser(currentUser);
     }
+  }
+
+   //Delete user by id
+   deleteAccount(request: DeleteAccountRequest) {
+    const params = this.createParams(request);
+    return this.http.delete(`${this.baseUrl}account/delete`, { params });
   }
 }

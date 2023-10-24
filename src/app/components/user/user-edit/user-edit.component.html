@@ -125,6 +125,11 @@
             <div class="text-center mt-3">
               <p-button [disabled]="!changePasswordForm.valid" styleClass="p-button-oranged me-2" type="submit">{{'ChangePassword' | translate }}</p-button>
             </div>
+
+            <hr>
+            <div class="text-center mt-3">
+              <p-button class="me-2" styleClass="p-button-danger" (click)="openDeleteProfileConfirmation()">{{'ProfileDelete' | translate }}</p-button>
+            </div>
           </form>
         </div>
       </div>

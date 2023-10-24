@@ -11,6 +11,7 @@ import { UpdateUserRequest, User } from 'src/app/interfaces/user.interface';
 import { UserService } from 'src/app/services/user.service';
 import { ChangeEmailComponent } from '../change-email/change-email.component';
 import { LanguageService } from 'src/app/common/services/language.service';
+import { AccountDeleteComponent } from '../account-delete/account-delete.component';
 
 @Component({
   selector: 'app-user-edit',
@@ -169,6 +170,16 @@ export class UserEditComponent implements OnInit, OnDestroy {
   //select avatar
   selectAvatar(id: number) {
     this.selectedAvatarId = id;
+  }
+
+  // Opening delete profile confirmation dialog to open the popup
+  openDeleteProfileConfirmation() {
+    this.modalService.openCustomConfirmation(0, this.openDeleteProfileDialog.bind(this), 'ConfirmationTitle', 'ProfileDeleteConfirmationMessage');
+  }
+
+  //delete profile popup
+  openDeleteProfileDialog() {
+    this.modalService.openDialog(AccountDeleteComponent, 600);
   }
 
   // return game page

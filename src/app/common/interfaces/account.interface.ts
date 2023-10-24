@@ -36,3 +36,10 @@ export interface Avatar {
   id: number;
   imageUrl: string;
 }
+
+//delete account request
+export interface DeleteAccountRequest {
+  identifier: string;
+  password: string;
+}
+

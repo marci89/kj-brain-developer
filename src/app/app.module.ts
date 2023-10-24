@@ -23,6 +23,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { PrivacyPolicyComponent } from './components/shared/privacy-policy/privacy-policy.component';
 import { TermsOfServiceComponent } from './components/shared/terms-of-service/terms-of-service.component';
+import { AccountDeleteComponent } from './components/user/account-delete/account-delete.component';
 
 
 
@@ -40,7 +41,8 @@ import { TermsOfServiceComponent } from './components/shared/terms-of-service/te
     HomeComponent,
     HeaderComponent,
     PrivacyPolicyComponent,
-    TermsOfServiceComponent
+    TermsOfServiceComponent,
+    AccountDeleteComponent
   ],
   imports: [
     BrowserModule,
