@@ -19,9 +19,6 @@
         <!-- ng-container for authorized links -->
         <ng-container *ngIf="accountService.currentUser$| async">
           <li class="nav-item col-6 col-md-auto">
-            <a class="nav-link" routerLink="/game" routerLinkActive="active">{{'Game' | translate }}</a>
-          </li>
-          <li class="nav-item col-6 col-md-auto">
             <a class="nav-link" routerLink="/daily-task" routerLinkActive="active">{{'DailyTask' | translate }}</a>
           </li>
           <li class="nav-item col-6 col-md-auto">

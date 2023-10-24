@@ -98,6 +98,18 @@
   "Practice": "Practice",
   "Stats": "Stats",
 
+  "Logic": "Logic",
+  "Math": "Math",
+  "Speed": "Speed",
+  "Memory": "Memory",
+  "SpeedDescription": "Challenge yourself with a variety of games that target your processing speed.",
+  "MemoryDescription": "Play through a collection of games designed to put your recollection to the test.",
+  "LogicDescription": "Flex your Planning, Spatial Reasoning, and Logical Reasoning skills with these games.",
+  "MathDescription": "Conquer your way through a variety of Math challenges.",
+
+
+
+
   "HomeModule": {
     "Discover": "Discover what your mind can do",
     "Description": "Exercise memory, flexibility, and more with the world’s most popular brain training program.",

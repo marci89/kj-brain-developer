@@ -24,6 +24,9 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { PrivacyPolicyComponent } from './components/shared/privacy-policy/privacy-policy.component';
 import { TermsOfServiceComponent } from './components/shared/terms-of-service/terms-of-service.component';
 import { AccountDeleteComponent } from './components/user/account-delete/account-delete.component';
+import { DailyTaskComponent } from './components/daily-task/daily-task.component';
+import { PracticeComponent } from './components/practice/practice.component';
+import { StatsComponent } from './components/stats/stats.component';
 
 
 
@@ -42,7 +45,10 @@ import { AccountDeleteComponent } from './components/user/account-delete/account
     HeaderComponent,
     PrivacyPolicyComponent,
     TermsOfServiceComponent,
-    AccountDeleteComponent
+    AccountDeleteComponent,
+    DailyTaskComponent,
+    PracticeComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,

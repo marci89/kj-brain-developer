@@ -9,6 +9,9 @@ import { authGuard } from './common/guards/auth.guard';
 import { UserEditComponent } from './components/user/user-edit/user-edit.component';
 import { TermsOfServiceComponent } from './components/shared/terms-of-service/terms-of-service.component';
 import { PrivacyPolicyComponent } from './components/shared/privacy-policy/privacy-policy.component';
+import { DailyTaskComponent } from './components/daily-task/daily-task.component';
+import { PracticeComponent } from './components/practice/practice.component';
+import { StatsComponent } from './components/stats/stats.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,6 +28,9 @@ const routes: Routes = [
     canActivate: [authGuard],
     children: [
       { path: 'user/edit', component: UserEditComponent },
+      { path: 'daily-task', component: DailyTaskComponent },
+      { path: 'practice', component: PracticeComponent },
+      { path: 'stats', component: StatsComponent },
     ]
   },
    { path: '**', component: HomeComponent, pathMatch: 'full' }
