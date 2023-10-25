@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { ToastrService } from 'ngx-toastr';
 import { DropDownListModel } from 'src/app/common/interfaces/common.interface';
 import { DifficultType } from 'src/app/interfaces/game.interface';
 import { MemoryCardPictureType, MemoryCardSettingsModel, MemoryCardSizeType } from 'src/app/interfaces/memory/memory-card.interface';
@@ -22,7 +21,7 @@ export class MemoryCardSettingsComponent implements OnInit {
   sizeTypes: DropDownListModel[] = [];
   selectedSizeType: number = 1;
 
-  model: MemoryCardSettingsModel = {} as MemoryCardSettingsModel;
+  settings: MemoryCardSettingsModel = {} as MemoryCardSettingsModel;
 
   constructor(
     private router: Router,
@@ -38,15 +37,17 @@ export class MemoryCardSettingsComponent implements OnInit {
 
   //init memoryCardPictureTypes dropdown list
   initMemoryCardPictureTypes() {
-    for (const key in MemoryCardPictureType) {
-      if (!isNaN(Number(key))) {
-        this.memoryCardPictureTypes.push({
-          label: MemoryCardPictureType[key],
-          value: +key,
-        });
-      }
+    const memoryCardModels = this.memoryCardService.listMemoryCardPictureModel();
+
+    memoryCardModels.forEach(element => {
+      const label = this.translate.instant(element.name);
+      this.memoryCardPictureTypes.push({
+        label: element.name,
+        value: element.id,
+      });
+    });
     }
-  }
+
 
   //init sizeTypes dropdown list
   initSizeTypes() {
@@ -62,19 +63,19 @@ export class MemoryCardSettingsComponent implements OnInit {
 
   //Settings model initalization
   initSettingsModel() {
-    this.model.isPracticeMode = true;
-    this.model.pictureType = MemoryCardPictureType.Animal;
-    this.model.sizeType = MemoryCardSizeType.Small;
-    this.model.difficultType = DifficultType.Easy;
+    this.settings.isPracticeMode = true;
+    this.settings.pictureType = MemoryCardPictureType.Animal;
+    this.settings.sizeType = MemoryCardSizeType.Small;
+    this.settings.difficultType = DifficultType.Easy;
   }
 
   //start learning
   start() {
-    this.model.pictureType = this.selectedPictureType;
-    this.model.sizeType = this.selectedSizeType;
+    this.settings.pictureType = this.selectedPictureType;
+    this.settings.sizeType = this.selectedSizeType;
     this.setDifficult(this.selectedSizeType);
 
-    this.memoryCardService.setSettings(this.model);
+    this.memoryCardService.setSettings(this.settings);
     this.router.navigate(['memory-card']);
   }
 
@@ -82,22 +83,23 @@ export class MemoryCardSettingsComponent implements OnInit {
   //Routing depends on LearnModeType
   setDifficult(enumValue: MemoryCardSizeType) {
 
+    const memoryCardPictureModel = this.memoryCardService.readMemoryCardPictureModelById(this.settings.pictureType);
     switch (enumValue) {
       case MemoryCardSizeType.Small:
-        this.model.difficultType = DifficultType.Easy;
+        this.settings.difficultType = DifficultType.Easy;
         break;
       case MemoryCardSizeType.Medium:
-        this.model.difficultType = DifficultType.Medium;
+        this.settings.difficultType = DifficultType.Medium;
         break;
       case MemoryCardSizeType.Large:
-        this.model.difficultType = DifficultType.Hard;
+        this.settings.difficultType = DifficultType.Hard;
         break;
       default:
-        this.model.difficultType = DifficultType.Easy;
+        this.settings.difficultType = DifficultType.Easy;
         break;
     }
 
-    if (this.selectedPictureType > 3 && this.model.difficultType === DifficultType.Hard)
-      this.model.difficultType = DifficultType.Hell;
+    if (memoryCardPictureModel?.isNightmare && this.settings.difficultType === DifficultType.Hard)
+      this.settings.difficultType = DifficultType.Nightmare;
   }
 }

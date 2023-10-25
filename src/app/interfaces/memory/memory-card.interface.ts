@@ -12,17 +12,26 @@ export interface MemoryCardSettingsModel {
   difficultType: DifficultType;
 }
 
+//more information about picture card
+export interface MemoryCardPictureModel {
+  id: number;
+  name: string;
+  isNightmare: boolean;
+}
+
+//picture type
 export enum MemoryCardPictureType {
-  //animal pictures
   Animal = 1,
 }
 
+//Size
 export enum MemoryCardSizeType {
    Small = 1,
    Medium = 2,
    Large = 3,
 }
 
+//memory card item
 export interface MemorycardItem {
   imageId: string;
   state: "default" | "flipped" | "matched";

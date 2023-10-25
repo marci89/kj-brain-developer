@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MemoryCardPictureType, MemoryCardSettingsModel, MemoryCardSizeType, MemorycardItem } from 'src/app/interfaces/memory/memory-card.interface';
+import { MemoryCardPictureModel, MemoryCardSettingsModel, MemoryCardSizeType, MemorycardItem } from 'src/app/interfaces/memory/memory-card.interface';
 import { MemoryCardService } from 'src/app/services/memory/memory-card.service';
+import { DifficultType } from '../../../../../interfaces/game.interface';
 
 @Component({
   selector: 'app-memory-card-board',
@@ -25,11 +26,33 @@ export class MemoryCardBoardComponent implements OnInit {
   matchedCount = 0;
   //moves count
   movesCount = 0;
+  //more complex picture helper model
+  memoryCardPictureModel: MemoryCardPictureModel = {} as MemoryCardPictureModel;
+  //level (difficult label)
+  level: string = "";
+  //card picture type label
+  cardPictureType: string = "";
+  //freeze cards when thay are flipping
+  isFreeze: boolean = false;
 
   constructor(private memoryCardService: MemoryCardService) { }
 
   ngOnInit(): void {
     this.settings = this.memoryCardService.readSettings();
+
+    const picturemodel = this.memoryCardService.readMemoryCardPictureModelById(this.settings.pictureType);
+    if (picturemodel) {
+      this.memoryCardPictureModel = picturemodel;
+    }
+    this.setLabels();
+  }
+
+  //Set labels
+  setLabels() {
+    this.cardPictureType = this.memoryCardPictureModel.name;
+    const difficultTypeValue = this.settings.difficultType;
+    const pictureTypeKey = DifficultType[difficultTypeValue];
+    this.level = pictureTypeKey;
   }
 
   //Start the game
@@ -46,9 +69,7 @@ export class MemoryCardBoardComponent implements OnInit {
 
   // set card images
   setCardImages() {
-    const pictureTypeValue = this.settings.pictureType;
-    const pictureTypeKey = MemoryCardPictureType[pictureTypeValue];
-    const folderName = pictureTypeKey?.toLocaleLowerCase();
+    const folderName = this.memoryCardPictureModel?.name.toLowerCase();
     const cardNumber = this.setCardNumber(this.settings.sizeType);
 
     if (folderName !== null && folderName !== undefined) {
@@ -95,6 +116,18 @@ export class MemoryCardBoardComponent implements OnInit {
   cardClicked(index: number): void {
     const cardInfo = this.cards[index];
 
+    if (this.isFreeze && cardInfo.state === 'flipped') { return }
+
+    this.isFreeze = true;
+
+    if (cardInfo.state === 'flipped' && this.isFreeze) { return }
+
+    if (cardInfo.state === 'default') {
+      setTimeout(() => {
+        this.isFreeze = false;
+      }, 400);
+    }
+
     if (cardInfo.state === 'default' && this.flippedCards.length < 2) {
       cardInfo.state = 'flipped';
       this.flippedCards.push(cardInfo);
@@ -102,11 +135,9 @@ export class MemoryCardBoardComponent implements OnInit {
       if (this.flippedCards.length > 1) {
         this.checkForCardMatch();
       }
-
     } else if (cardInfo.state === 'flipped') {
       cardInfo.state = 'default';
       this.flippedCards.pop();
-
     }
   }
 

@@ -19,3 +19,11 @@ body {
 p, label {
   font-weight: bold;
 }
+
+.dark-card {
+  background-color: #134D55 ;
+  color: white ;
+  padding: 10px ;
+  border-radius: 2rem ;
+  margin: 5px ;
+}

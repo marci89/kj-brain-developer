@@ -1,24 +1,50 @@
-import { Injectable } from '@angular/core';
-import { MemoryCardSettingsModel } from 'src/app/interfaces/memory/memory-card.interface';
+import { Injectable, OnInit } from '@angular/core';
+import { MemoryCardPictureModel, MemoryCardSettingsModel } from 'src/app/interfaces/memory/memory-card.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MemoryCardService {
 
-    //private settings model object
-    private settings: MemoryCardSettingsModel = {} as MemoryCardSettingsModel;
+  //private settings model object
+  private settings: MemoryCardSettingsModel = {} as MemoryCardSettingsModel;
+  memoryCardPictureModels: MemoryCardPictureModel[] = [];
 
-    constructor() {
-    }
+  constructor() {
+    this.initMemoryCardPictureModel()
+  }
 
-    //Read settings
-    readSettings() {
-      return this.settings;
-    }
 
-    //update settings
-    setSettings(request: MemoryCardSettingsModel) {
-      this.settings = request;
-    }
+
+  //Read settings
+  readSettings() {
+    return this.settings;
+  }
+
+  //update settings
+  setSettings(request: MemoryCardSettingsModel) {
+    this.settings = request;
+  }
+
+  //Init more complex card picture models
+  initMemoryCardPictureModel() {
+
+    const animal: MemoryCardPictureModel = {
+      id: 1,
+      name: "Animal",
+      isNightmare: false
+    };
+
+    this.memoryCardPictureModels.push(animal);
+  }
+
+  //Get memory cards
+  listMemoryCardPictureModel() {
+    return this.memoryCardPictureModels;
+  }
+
+  //Get memory card model by id
+  readMemoryCardPictureModelById(id: number) {
+    return this.memoryCardPictureModels.find(x => x.id === id);
+  }
 }

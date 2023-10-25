@@ -4,12 +4,12 @@
       <div class="card col-lg-10 col-md-10 col-sm-10 mx-auto">
         <div class="card-body">
           <div class="text-center mt-3 mb-3">
-            <h2 class="header-label">{{'MemoryCard' | translate}}</h2>
+            <h2>{{'MemoryCard' | translate}}</h2>
           </div>
           <div class="row">
             <h5>{{ 'MemoryCardDescription' | translate }}</h5>
-            <h3 class="mt-5">{{'PictureType' | translate}}: {{settings.pictureType}}</h3>
-            <h3>{{'DifficultlyLevel' | translate}}: {{settings.difficultType}}</h3>
+            <h3 class="mt-5">{{'PictureType' | translate}}: {{cardPictureType | translate}}</h3>
+            <h3>{{'DifficultlyLevel' | translate}}: {{level | translate}}</h3>
           </div>
           <div class="row">
             <div class="col-12 d-flex justify-content-center text-center mt-3">
@@ -24,7 +24,7 @@
 
   <div *ngIf="!isFinished && isStarted">
     <!-- Header -->
-    <div class="row mb-3 mt-3 header-container">
+    <div class="row mb-3 mt-3 dark-card">
 
       <div class="col-12 col-lg-6 col-md-6 col-sm-6 d-flex align-items-center">
         <h5>{{'DifficultlyLevel' | translate}}: {{settings.difficultType}}</h5>
@@ -51,7 +51,7 @@
         <div class="card-body">
           <div class="row">
             <div class="col-12 d-flex justify-content-center text-center mt-3">
-              <h2 class="header-label">{{'MemoryCardFinish' | translate}}: {{movesCount}}</h2>
+              <h2 >{{'MemoryCardFinish' | translate}}: {{movesCount}}</h2>
             </div>
           </div>
           <div class="row">
