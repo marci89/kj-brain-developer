@@ -107,6 +107,30 @@
   "MemoryDescription": "Játssz olyan játékok gyűjteményén, amelyek célja, hogy próbára tedd az emlékeidet.",
   "LogicDescription": "Fejlesztheti tervezési, térbeli és logikai érvelési készségeit ezekkel a játékokkal.",
   "MathDescription": "Hódítsa meg az utat a különböző matematikai kihívásokon.",
+  "Start": "Indítás",
+  "Settings": "Beállítások",
+  "DifficultlyLevel": "Nehézségi szint",
+  "Easy" : "Könnyű",
+  "Medium" : "Közepes",
+  "Hard" : "Nehéz",
+  "Hell" : "Pokol",
+  "Size": "Méret",
+  "Small": "Kicsi",
+  "Large": "Nagy",
+  "Restart": "Újrakezd",
+
+  "Animal": "Állat",
+
+  "MemoryCard": "Memória kártya",
+  "MemoryCardDescription": "A memóriakártya-játék egyfajta párosítási játék, amelyet gyakran kognitív és oktatási gyakorlatként használnak. A játékosok felváltva forgatnak fel egyszerre két kártyát azzal a céllal, hogy egyező kártyapárokat találjanak. Keresse meg őket.",
+  "PictureType": "Kép típus",
+  "Moves": "Lépések",
+  "MemoryCardFinish": "Gratulálunk! Sikerült megoldanod ennyi lépésből",
+
+
+
+
+
 
   "HomeModule": {
     "Discover": "Fedezze fel, mire képes az elméje",

@@ -12,6 +12,8 @@ import { PrivacyPolicyComponent } from './components/shared/privacy-policy/priva
 import { DailyTaskComponent } from './components/daily-task/daily-task.component';
 import { PracticeComponent } from './components/practice/practice.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { MemoryCardSettingsComponent } from './components/games/memory/memory-card-game/memory-card-settings/memory-card-settings.component';
+import { MemoryCardBoardComponent } from './components/games/memory/memory-card-game/memory-card-board/memory-card-board.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,6 +33,11 @@ const routes: Routes = [
       { path: 'daily-task', component: DailyTaskComponent },
       { path: 'practice', component: PracticeComponent },
       { path: 'stats', component: StatsComponent },
+
+      { path: 'memory-card-settings', component: MemoryCardSettingsComponent },
+      { path: 'memory-card', component: MemoryCardBoardComponent },
+
+
     ]
   },
    { path: '**', component: HomeComponent, pathMatch: 'full' }

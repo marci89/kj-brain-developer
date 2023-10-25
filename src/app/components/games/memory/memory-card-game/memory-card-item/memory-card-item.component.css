@@ -1,0 +1,76 @@
+:host {
+  display: block;
+}
+
+.card {
+  -webkit-box-shadow: 10px 10px 43px -18px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 43px -18px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 43px -18px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.back,
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(0deg);
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+img {
+
+  max-height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+@media (max-width: 1324px) {
+  .card {
+    height: 150px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .card {
+    height: 150px;
+  }
+}
+
+@media (max-width: 840px) {
+  .card {
+    height: 100px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .card {
+    height: 70px;
+  }
+}

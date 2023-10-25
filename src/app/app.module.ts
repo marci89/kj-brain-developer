@@ -27,6 +27,9 @@ import { AccountDeleteComponent } from './components/user/account-delete/account
 import { DailyTaskComponent } from './components/daily-task/daily-task.component';
 import { PracticeComponent } from './components/practice/practice.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { MemoryCardItemComponent } from './components/games/memory/memory-card-game/memory-card-item/memory-card-item.component';
+import { MemoryCardSettingsComponent } from './components/games/memory/memory-card-game/memory-card-settings/memory-card-settings.component';
+import { MemoryCardBoardComponent } from './components/games/memory/memory-card-game/memory-card-board/memory-card-board.component';
 
 
 
@@ -48,7 +51,10 @@ import { StatsComponent } from './components/stats/stats.component';
     AccountDeleteComponent,
     DailyTaskComponent,
     PracticeComponent,
-    StatsComponent
+    StatsComponent,
+    MemoryCardItemComponent,
+    MemoryCardSettingsComponent,
+    MemoryCardBoardComponent
   ],
   imports: [
     BrowserModule,
