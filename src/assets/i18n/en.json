@@ -108,7 +108,7 @@
   "Easy" : "Easy",
   "Medium" : "Medium",
   "Hard" : "Hard",
-  "Hell" : "Hell",
+  "Nightmare" : "Nightmare",
   "Size": "Size",
   "Small": "Small",
   "Large": "Large",
@@ -136,6 +136,15 @@
   "MathDescription": "Mathematical problems.",
 
 
+  "Statistics": "Statistics",
+  "StatisticsCharts": "The first chart shows the results of the daily tasks, the second shows the results of the memory card.",
+  "StatisticsTitle": "Statistics on the course of development",
+  "StatisticsDescription": "The results are presented in serial order according to the date of completion of the task.",
+  "StatisticsNumber": "How many task results would you like to see?",
+  "StatisticsInfo": "Only daily tasks are logged.",
+  "TrainingStatistics": "Daily Task Statistics",
+  "MemoryCardStatistics": "Memory Card Statistics",
+  "MemoryCardStatisticsDescription": "The memory card is luck-based, so it has a separate set of statistics. It keeps track of the number of steps",
 
 
   "HomeModule": {

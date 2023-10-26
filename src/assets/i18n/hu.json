@@ -109,7 +109,7 @@
   "Easy" : "Könnyű",
   "Medium" : "Közepes",
   "Hard" : "Nehéz",
-  "Hell" : "Pokol",
+  "Nightmare" : "Rémálom",
   "Size": "Méret",
   "Small": "Kicsi",
   "Large": "Nagy",
@@ -141,7 +141,15 @@
 
 
 
-
+  "Statistics": "Statisztika",
+  "StatisticsCharts": "Az első diagram a napi feladatok eredményeit, a második a memória kártya eredményeit mutatja.",
+  "StatisticsTitle": "Statisztika a fejlődés menetéről",
+  "StatisticsDescription": "A legutóbbi eredményeket mutatja be növekvő sorrendben a feladatok befejezésének időpontja szerint.",
+  "StatisticsNumber": "Mennyi feladat eredményt mutasson?",
+  "StatisticsInfo": "Csak a napi feladatok kerülnek logolásra.",
+  "TrainingStatistics": "Napi feladat statisztikája",
+  "MemoryCardStatistics": "Memória kártya statisztikája",
+  "MemoryCardStatisticsDescription": "A memória kártya a szerencsén alapszik, így külön statisztikában szerepel. A lépések számából készít statisztikát.",
 
 
   "HomeModule": {

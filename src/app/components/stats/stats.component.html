@@ -1,1 +1,44 @@
-<p>stats works!</p>
+<!-- Filter panel -->
+<div class="container">
+  <div class="text-center">
+    <h2>{{ 'StatisticsTitle' | translate }}</h2>
+    <h3>{{ 'StatisticsCharts' | translate }}</h3>
+    <p>{{ 'StatisticsDescription' | translate }}</p>
+    <p>{{ 'StatisticsInfo' | translate }}</p>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h3 class="text-center">{{ 'TrainingStatistics' | translate }}</h3>
+      <div class="p-labeled-input">
+        <label for="quantity">{{ 'StatisticsNumber' | translate }}</label>
+        <p-inputNumber mode="decimal" [showButtons]="true" [min]="1" [max]="300" [(ngModel)]="trainingQuantity"
+          name="quantity" [style]="{'width':'100px'}" [inputStyle]="{'width':'100px'}"
+          (onInput)="handleTrainingInput($event)"></p-inputNumber>
+      </div>
+      <!-- Chart -->
+      <div class="card mt-3">
+        <p-chart type="line" [data]=" trainingChartData" [options]=" trainingChartOptions"
+          class="diagram-style"></p-chart>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-5">
+    <div class="card-body">
+      <h3 class="text-center">{{ 'MemoryCardStatistics' | translate }}</h3>
+      <p>{{ 'MemoryCardStatisticsDescription' | translate }}</p>
+      <div class="p-labeled-input">
+        <label for="quantity">{{ 'StatisticsNumber' | translate }}</label>
+        <p-inputNumber mode="decimal" [showButtons]="true" [min]="1" [max]="300" [(ngModel)]="memoryCardQuantity"
+          name="quantity" [style]="{'width':'100px'}" [inputStyle]="{'width':'100px'}"
+          (onInput)="handleMemoryCardInput($event)"></p-inputNumber>
+      </div>
+      <!-- Chart -->
+      <div class="card mt-3">
+        <p-chart type="line" [data]="  memoryCardChartData" [options]="  memoryCardChartOptions"
+          class="diagram-style"></p-chart>
+      </div>
+    </div>
+  </div>
+</div>
