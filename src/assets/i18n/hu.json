@@ -98,15 +98,11 @@
   "DailyTask": "Napi feladat",
   "Practice": "Gyakorlás",
   "Stats": "Statisztika",
+  "Score": "Pont",
+  "Opportunities": "Lehetőségek",
+  "GameFinish": "Gratulálunk! Sikerült megoldanod!",
 
-  "Logic": "Logika",
-  "Math": "Matematika",
-  "Speed": "Gyorsaság",
   "Memory": "Memória",
-  "SpeedDescription": "Tedd kihívás elé magad különféle játékokkal, amelyek a feldolgozási sebességedet célozzák.",
-  "MemoryDescription": "Játssz olyan játékok gyűjteményén, amelyek célja, hogy próbára tedd az emlékeidet.",
-  "LogicDescription": "Fejlesztheti tervezési, térbeli és logikai érvelési készségeit ezekkel a játékokkal.",
-  "MathDescription": "Hódítsa meg az utat a különböző matematikai kihívásokon.",
   "Start": "Indítás",
   "Settings": "Beállítások",
   "DifficultlyLevel": "Nehézségi szint",
@@ -129,6 +125,22 @@
 
 
 
+  "MemorySound": "Hang memória",
+  "MemorySoundDescription": "Hangokat fog hallani egymás után és utánozni kell helyes sorrendben őket.",
+  "SoundType": "hang típus",
+
+  "MemoryNumber": "Szám memória",
+  "MemoryNumberDescription": "Látni fog egy számot, majd a memóriájára hagyatkozva lekell írnia",
+
+  "MemoryMatrix": "Memória matrix",
+  "MemoryMatrixDescription": "Emlékezzen hol voltak a jelölt részek és kattintson rájuk.",
+
+  "Math": "Matematika",
+  "MathDescription": "Matematikai feladatok.",
+
+
+
+
 
 
 
@@ -136,7 +148,11 @@
     "Discover": "Fedezze fel, mire képes az elméje",
     "Description": "Gyakorolja a memóriát, a rugalmasságot és még sok mást a világ legnépszerűbb agytorna programjával.",
     "GetStarted": "Fogj neki most",
-    "Free": "Teljesen ingyenes"
+    "Free": "Teljesen ingyenes",
+    "SpeedDescription": "Tedd kihívás elé magad különféle játékokkal, amelyek a feldolgozási sebességedet célozzák.",
+    "MemoryDescription": "Játssz olyan játékok gyűjteményén, amelyek célja, hogy próbára tedd az emlékeidet.",
+    "LogicDescription": "Fejlesztheti tervezési, térbeli és logikai érvelési készségeit ezekkel a játékokkal.",
+    "MathDescription": "Hódítsa meg az utat a különböző matematikai kihívásokon."
   },
 
   "cookie": {

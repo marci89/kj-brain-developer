@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MemoryCardPictureModel, MemoryCardSettingsModel, MemoryCardSizeType, MemorycardItem } from 'src/app/interfaces/memory/memory-card.interface';
-import { MemoryCardService } from 'src/app/services/memory/memory-card.service';
-import { DifficultType } from '../../../../../interfaces/game.interface';
+import { DifficultType } from 'src/app/interfaces/game.interface';
+import { MemoryCardPictureModel, MemoryCardSettingsModel, MemoryCardSizeType, MemorycardItem } from 'src/app/interfaces/memory-card.interface';
+import { MemoryCardService } from 'src/app/services/memory-card.service';
+
 
 @Component({
   selector: 'app-memory-card-board',
@@ -29,7 +30,7 @@ export class MemoryCardBoardComponent implements OnInit {
   //more complex picture helper model
   memoryCardPictureModel: MemoryCardPictureModel = {} as MemoryCardPictureModel;
   //level (difficult label)
-  level: string = "";
+  difficultLevel: string = "";
   //card picture type label
   cardPictureType: string = "";
   //freeze cards when thay are flipping
@@ -52,7 +53,7 @@ export class MemoryCardBoardComponent implements OnInit {
     this.cardPictureType = this.memoryCardPictureModel.name;
     const difficultTypeValue = this.settings.difficultType;
     const pictureTypeKey = DifficultType[difficultTypeValue];
-    this.level = pictureTypeKey;
+    this.difficultLevel = pictureTypeKey;
   }
 
   //Start the game

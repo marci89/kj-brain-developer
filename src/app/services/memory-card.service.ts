@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { MemoryCardPictureModel, MemoryCardSettingsModel } from 'src/app/interfaces/memory/memory-card.interface';
+import { MemoryCardPictureModel, MemoryCardSettingsModel } from '../interfaces/memory-card.interface';
 
 @Injectable({
   providedIn: 'root'

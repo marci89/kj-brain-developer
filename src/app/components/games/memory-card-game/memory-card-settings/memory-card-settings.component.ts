@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { DropDownListModel } from 'src/app/common/interfaces/common.interface';
 import { DifficultType } from 'src/app/interfaces/game.interface';
-import { MemoryCardPictureType, MemoryCardSettingsModel, MemoryCardSizeType } from 'src/app/interfaces/memory/memory-card.interface';
-import { MemoryCardService } from 'src/app/services/memory/memory-card.service';
+import { MemoryCardPictureType, MemoryCardSettingsModel, MemoryCardSizeType } from 'src/app/interfaces/memory-card.interface';
+import { MemoryCardService } from 'src/app/services/memory-card.service';
 
 @Component({
   selector: 'app-memory-card-settings',

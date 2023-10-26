@@ -1,4 +1,5 @@
-import { DifficultType } from "../game.interface";
+import { DifficultType } from "./game.interface";
+
 
 //basic datas to start to memory card game
 export interface MemoryCardSettingsModel {

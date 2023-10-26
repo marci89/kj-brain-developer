@@ -1,20 +1,4 @@
 
-.memory-container{
-  background-color: rgb(139, 39, 123);
-  color:white;
-}
-
-.speed-container{
-  background-color: rgb(202, 75, 70);
-  color:white;
-}
-
-.logic-container{
-  background-color: rgb(68, 68, 158);
-  color:white;
-}
-
-.math-container{
-  background-color: rgb(41, 143, 75);
-  color:white;
+.game-image{
+  width: 100%;
 }

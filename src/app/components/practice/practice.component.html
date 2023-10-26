@@ -1,46 +1,56 @@
-<div class="container">
-<div class="row justify-content-center mt-2">
-  <div class="col-12 col-sm-10 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
-    <!--  Memory -->
-    <div class="card memory-container text-center mt-2 mb-2">
-      <h1 class="skill-group-title">{{'Memory' | translate }}</h1>
-      <h4>{{'MemoryDescription' | translate }}</h4>
-
-      <h2>{{'MemoryCard' | translate }}</h2>
-      <h4>{{'MemoryCardDescription' | translate }}</h4>
-      <p-button styleClass="p-button-oranged" routerLink="/memory-card-settings">{{'Game' | translate }}</p-button>
-
+<div class="conatiner">
+  <h1 class="text-center mt-3">{{'Practice' | translate }}</h1>
+  <div class="row col-10 mt-1 mx-auto">
+       <!--  MemoryCard -->
+    <div class="col-8 col-sm-8 col-md-6 col-lg-4 text-center mx-auto mb-3 ">
+      <div class="card mx-auto">
+        <div class="card-body">
+          <img [src]="'./assets/images/games/memory-card.png'" class="game-image" />
+          <h2>{{'MemoryCard' | translate }}</h2>
+          <p-button styleClass="p-button-oranged" routerLink="/memory-card-settings">{{'Game' | translate }}</p-button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-<div class="row justify-content-center mt-2">
-  <div class="col-12 col-sm-10 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
-    <!--  Speed -->
-    <div class="speed-container text-center">
-      <h1>{{'Speed' | translate }}</h1>
-      <h4>{{'SpeedDescription' | translate }}</h4>
+       <!--  MemorySound -->
+    <div class="col-8 col-sm-8 col-md-6 col-lg-4 text-center mx-auto mb-3 ">
+      <div class="card mx-auto">
+        <div class="card-body">
+          <img [src]="'./assets/images/games/memory-card.png'" class="game-image" />
+          <h2>{{'MemorySound' | translate }}</h2>
+          <p-button styleClass="p-button-oranged" routerLink="/memory-sound-settings">{{'Game' | translate }}</p-button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-<div class="row justify-content-center mt-2">
-  <div class="col-12 col-sm-10 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
-    <!--  Logic -->
-    <div class="logic-container text-center">
-      <h1>{{'Logic' | translate }}</h1>
-      <h4>{{'LogicDescription' | translate }}</h4>
+   <!--  MemoryNumber-->
+    <div class="col-8 col-sm-8 col-md-6 col-lg-4 text-center mx-auto mb-3 ">
+      <div class="card mx-auto">
+        <div class="card-body">
+          <img [src]="'./assets/images/games/memory-card.png'" class="game-image" />
+          <h2>{{'MemoryNumber' | translate }}</h2>
+          <p-button styleClass="p-button-oranged" routerLink="/memory-number-settings">{{'Game' | translate }}</p-button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-<div class="row justify-content-center mt-2">
-  <div class="col-12 col-sm-10 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
-    <!--  Math -->
-    <div class="math-container text-center">
-      <h1>{{'Math' | translate }}</h1>
-      <h4>{{'MathDescription' | translate }}</h4>
+   <!--  MemoryMatrix -->
+    <div class="col-8 col-sm-8 col-md-6 col-lg-4 text-center mx-auto mb-3 ">
+      <div class="card mx-auto">
+        <div class="card-body">
+          <img [src]="'./assets/images/games/memory-card.png'" class="game-image" />
+          <h2>{{'MemoryMatrix' | translate }}</h2>
+          <p-button styleClass="p-button-oranged" routerLink="/memory-matrix-settings">{{'Game' | translate }}</p-button>
+        </div>
+      </div>
     </div>
+   <!--  Math -->
+    <div class="col-8 col-sm-8 col-md-6 col-lg-4 text-center mx-auto mb-3 ">
+      <div class="card mx-auto">
+        <div class="card-body">
+          <img [src]="'./assets/images/games/memory-card.png'" class="game-image" />
+          <h2>{{'Math' | translate }}</h2>
+          <p-button styleClass="p-button-oranged" routerLink="/math-settings">{{'Game' | translate }}</p-button>
+        </div>
+      </div>
+    </div>
+
   </div>
-</div>
 </div>

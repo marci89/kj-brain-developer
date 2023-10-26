@@ -1,6 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MemorycardItem } from 'src/app/interfaces/memory/memory-card.interface';
+import { MemorycardItem } from 'src/app/interfaces/memory-card.interface';
 
 @Component({
   selector: 'app-memory-card-item',

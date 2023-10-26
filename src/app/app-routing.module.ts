@@ -12,8 +12,8 @@ import { PrivacyPolicyComponent } from './components/shared/privacy-policy/priva
 import { DailyTaskComponent } from './components/daily-task/daily-task.component';
 import { PracticeComponent } from './components/practice/practice.component';
 import { StatsComponent } from './components/stats/stats.component';
-import { MemoryCardSettingsComponent } from './components/games/memory/memory-card-game/memory-card-settings/memory-card-settings.component';
-import { MemoryCardBoardComponent } from './components/games/memory/memory-card-game/memory-card-board/memory-card-board.component';
+import { MemoryCardSettingsComponent } from './components/games/memory-card-game/memory-card-settings/memory-card-settings.component';
+import { MemoryCardBoardComponent } from './components/games/memory-card-game/memory-card-board/memory-card-board.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

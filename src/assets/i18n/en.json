@@ -97,15 +97,11 @@
   "DailyTask": "Daily task",
   "Practice": "Practice",
   "Stats": "Stats",
+  "Score": "Score",
+  "Opportunities": "Opportunities",
+  "GameFinish": "Congratulation! You managed to solve it!",
 
-  "Logic": "Logic",
-  "Math": "Math",
-  "Speed": "Speed",
   "Memory": "Memory",
-  "SpeedDescription": "Challenge yourself with a variety of games that target your processing speed.",
-  "MemoryDescription": "Play through a collection of games designed to put your recollection to the test.",
-  "LogicDescription": "Flex your Planning, Spatial Reasoning, and Logical Reasoning skills with these games.",
-  "MathDescription": "Conquer your way through a variety of Math challenges.",
   "Start": "Start",
   "Settings": "Settings",
   "DifficultlyLevel": "Difficultly level",
@@ -121,12 +117,23 @@
   "Animal": "Animal",
 
   "MemoryCard": "Memory card",
-  "MemoryCardDescription": "Memory card games are a type of matching game that is often used as a cognitive and educational exercise. Players take turns flipping over two cards at a time, with the goal of finding pairs of matching cards. Find them all.",
+  "MemoryCardDescription":"Memory card games are a type of matching game that is often used as a cognitive and educational exercise. Players take turns flipping over two cards at a time, with the goal of finding pairs of matching cards. Find them all.",
   "PictureType": "Picture type",
   "Moves": "Moves",
-  "MemoryCardFinish": "Congratulations! You've successfully solved it in this many steps",
+  "MemoryCardFinish":"Congratulations! You've successfully solved it in this many steps",
 
+  "MemorySound": "Memory sound",
+  "MemorySoundDescription":"You will hear sounds one after the other and have to imitate them in the correct order.",
+  "SoundType": "Sound type",
 
+  "MemoryNumber": "Memory number",
+  "MemoryNumberDescription": "You will see a number and then rely on your memory to write it down",
+
+  "MemoryMatrix": "Memory matrix",
+  "MemoryMatrixDescription": "Remember where the marked parts were and click on them.",
+
+  "Math": "Math",
+  "MathDescription": "Mathematical problems.",
 
 
 
@@ -135,7 +142,11 @@
     "Discover": "Discover what your mind can do",
     "Description": "Exercise memory, flexibility, and more with the world’s most popular brain training program.",
     "GetStarted": "Get started",
-    "Free": "Completely free"
+    "Free": "Completely free",
+    "SpeedDescription": "Challenge yourself with a variety of games that target your processing speed.",
+    "MemoryDescription": "Play through a collection of games designed to put your recollection to the test.",
+    "LogicDescription": "Flex your Planning, Spatial Reasoning, and Logical Reasoning skills with these games.",
+    "MathDescription": "Conquer your way through a variety of Math challenges."
   },
 
   "cookie": {
