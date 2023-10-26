@@ -1,12 +1,13 @@
 <!-- Filter panel -->
 <div class="container">
+  <div class="row mb-3 mt-3 dark-card">
   <div class="text-center">
     <h2>{{ 'StatisticsTitle' | translate }}</h2>
     <h3>{{ 'StatisticsCharts' | translate }}</h3>
     <p>{{ 'StatisticsDescription' | translate }}</p>
     <p>{{ 'StatisticsInfo' | translate }}</p>
   </div>
-
+  </div>
   <div class="card">
     <div class="card-body">
 
@@ -18,7 +19,7 @@
         </div>
       </div>
 
-      <h3 class="text-center mt-3">{{ 'TrainingStatistics' | translate }}</h3>
+      <h3 class="text-center mt-1">{{ 'TrainingStatistics' | translate }}</h3>
       <div class="p-labeled-input">
         <label for="quantity">{{ 'StatisticsNumber' | translate }}</label>
         <p-inputNumber mode="decimal" [showButtons]="true" [min]="1" [max]="300" [(ngModel)]="trainingQuantity"
@@ -45,7 +46,7 @@
         </div>
       </div>
 
-      <h3 class="text-center mt-3">{{ 'MemoryCardStatistics' | translate }}</h3>
+      <h3 class="text-center mt-1">{{ 'MemoryCardStatistics' | translate }}</h3>
       <p>{{ 'MemoryCardStatisticsDescription' | translate }}</p>
 
       <div class="p-labeled-input">

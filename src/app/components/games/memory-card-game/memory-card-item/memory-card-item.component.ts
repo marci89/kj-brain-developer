@@ -15,7 +15,7 @@ import { MemorycardItem } from 'src/app/interfaces/memory-card.interface';
         transform: 'perspective(600px) rotateY(180deg)'
       })),
       state('matched', style({
-        visibility: 'false',
+        visibility: 'hidden',
         transform: 'scale(0.05)',
         opacity: 0
       })),
