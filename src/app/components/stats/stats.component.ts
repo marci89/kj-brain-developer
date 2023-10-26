@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
+import { ModalService } from 'src/app/common/services/modal.service';
 import { ListMemoryCardStatisticsChartRequest, ListTrainingStatisticsChartRequest, MemoryCardStatisticsChart, TrainingStatisticsChart } from 'src/app/interfaces/training.interface';
 import { StatisticsService } from 'src/app/services/statistics.service';
 
@@ -24,6 +25,7 @@ export class StatsComponent implements OnInit {
     private statisticsService: StatisticsService,
     private toastr: ToastrService,
     private translate: TranslateService,
+    private modalService: ModalService,
   ) { }
 
   ngOnInit() {
@@ -257,6 +259,42 @@ export class StatsComponent implements OnInit {
         }
       }
     };
+  }
+
+   // Opening delete many confirmation dialog to handle deleteAll training action
+   openDeleteAllTrainingConfirmation() {
+    this.modalService.openCustomConfirmation(0, this.deleteAllTraining.bind(this), 'DeleteConfirmationTitle', 'DeleteManyConfirmationMessage');
+  }
+
+     // Opening delete many confirmation dialog to handle deleteAll memory card action
+     openDeleteAllMemoryCardConfirmation() {
+      this.modalService.openCustomConfirmation(0, this.deleteAllMemoryCard.bind(this), 'DeleteConfirmationTitle', 'DeleteManyConfirmationMessage');
+    }
+
+  //delete all training
+  deleteAllTraining() {
+    this.statisticsService.deleteAllTraining().subscribe({
+      next: _ => {
+        this.toastr.success(this.translate.instant('DeleteSuccess'))
+        this.listTrainingStatistics();
+      },
+      error: error => {
+        this.toastr.error(this.translate.instant(error.error))
+      }
+    })
+  }
+
+   //delete all memory card
+   deleteAllMemoryCard() {
+    this.statisticsService.deleteAllMemoryCard().subscribe({
+      next: _ => {
+        this.toastr.success(this.translate.instant('DeleteSuccess'))
+        this.listMemoryCardStatistics();
+      },
+      error: error => {
+        this.toastr.error(this.translate.instant(error.error))
+      }
+    })
   }
 }
 

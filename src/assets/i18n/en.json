@@ -113,6 +113,9 @@
   "Small": "Small",
   "Large": "Large",
   "Restart": "Restart",
+  "Continue": "Continue",
+  "BackToSettings": "Back to settings",
+  "DeleteAllStatistics": "Delete statics",
 
   "Animal": "Animal",
 

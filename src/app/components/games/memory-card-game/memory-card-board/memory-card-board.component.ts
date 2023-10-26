@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DifficultType } from 'src/app/interfaces/game.interface';
 import { MemoryCardPictureModel, MemoryCardSettingsModel, MemoryCardSizeType, MemorycardItem } from 'src/app/interfaces/memory-card.interface';
+import { CreateMemoryCardStatisticsRequest } from 'src/app/interfaces/training.interface';
 import { MemoryCardService } from 'src/app/services/memory-card.service';
+import { StatisticsService } from 'src/app/services/statistics.service';
+import { TrainingService } from 'src/app/services/training.service';
 
 
 @Component({
@@ -10,7 +13,6 @@ import { MemoryCardService } from 'src/app/services/memory-card.service';
   styleUrls: ['./memory-card-board.component.css']
 })
 export class MemoryCardBoardComponent implements OnInit {
-
   //is started or not
   isStarted: boolean = false;
   //is finished or not
@@ -36,7 +38,11 @@ export class MemoryCardBoardComponent implements OnInit {
   //freeze cards when thay are flipping
   isFreeze: boolean = false;
 
-  constructor(private memoryCardService: MemoryCardService) { }
+  constructor(
+    private memoryCardService: MemoryCardService,
+    private statisticsService: StatisticsService,
+    private trainingService: TrainingService
+    ) { }
 
   ngOnInit(): void {
     this.settings = this.memoryCardService.readSettings();
@@ -168,6 +174,28 @@ export class MemoryCardBoardComponent implements OnInit {
     this.matchedCount = 0;
     this.movesCount = 0;
     this.isFinished = false;
+    this.cardImages = [];
     this.start();
   }
+
+  trainingContinue(): void {
+    this.createStatistics();
+    this.matchedCount = 0;
+    this.movesCount = 0;
+    this.isFinished = false;
+    this.cardImages = [];
+    this.start();
+  }
+
+    // create statistics
+    createStatistics() {
+      // Initialize the serviceRequest object
+      const serviceRequest: CreateMemoryCardStatisticsRequest = {
+        moved: this.movesCount,
+        difficult: this.settings.difficultType,
+        lastPictureTypeId : this.settings.pictureType
+      };
+
+      this.statisticsService.createMemoryCard(serviceRequest).subscribe({})
+    }
 }
