@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { MemoryCardPictureType, MemoryCardSettingsModel, MemoryCardSizeType } from '../interfaces/memory-card.interface';
+import { MemoryCardPictureType, MemoryCardSettingsModel, MemoryCardSizeType } from '../interfaces/games/memory-card.interface';
 import { Router } from '@angular/router';
-import { MemoryCardService } from './memory-card.service';
-import { DifficultType } from '../interfaces/game.interface';
+import { MemoryCardService } from './games/memory-card.service';
+import { DifficultType } from '../interfaces/games/game.interface';
 
 @Injectable({
   providedIn: 'root'

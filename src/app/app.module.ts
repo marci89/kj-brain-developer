@@ -30,6 +30,8 @@ import { StatsComponent } from './components/stats/stats.component';
 import { MemoryCardItemComponent } from './components/games/memory-card-game/memory-card-item/memory-card-item.component';
 import { MemoryCardSettingsComponent } from './components/games/memory-card-game/memory-card-settings/memory-card-settings.component';
 import { MemoryCardBoardComponent } from './components/games/memory-card-game/memory-card-board/memory-card-board.component';
+import { MemorySoundBoardComponent } from './components/games/memory-sound/memory-sound-board/memory-sound-board.component';
+import { MemorySoundSettingsComponent } from './components/games/memory-sound/memory-sound-settings/memory-sound-settings.component';
 
 
 
@@ -55,7 +57,9 @@ import { MemoryCardBoardComponent } from './components/games/memory-card-game/me
     StatsComponent,
     MemoryCardItemComponent,
     MemoryCardSettingsComponent,
-    MemoryCardBoardComponent
+    MemoryCardBoardComponent,
+    MemorySoundBoardComponent,
+    MemorySoundSettingsComponent
   ],
   imports: [
     BrowserModule,

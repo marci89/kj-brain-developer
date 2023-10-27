@@ -14,6 +14,8 @@ import { PracticeComponent } from './components/practice/practice.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { MemoryCardSettingsComponent } from './components/games/memory-card-game/memory-card-settings/memory-card-settings.component';
 import { MemoryCardBoardComponent } from './components/games/memory-card-game/memory-card-board/memory-card-board.component';
+import { MemorySoundSettingsComponent } from './components/games/memory-sound/memory-sound-settings/memory-sound-settings.component';
+import { MemorySoundBoardComponent } from './components/games/memory-sound/memory-sound-board/memory-sound-board.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,6 +38,8 @@ const routes: Routes = [
 
       { path: 'memory-card-settings', component: MemoryCardSettingsComponent },
       { path: 'memory-card', component: MemoryCardBoardComponent },
+      { path: 'memory-sound-settings', component: MemorySoundSettingsComponent },
+      { path: 'memory-sound', component: MemorySoundBoardComponent },
 
 
     ]

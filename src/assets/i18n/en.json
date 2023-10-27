@@ -105,6 +105,7 @@
   "Start": "Start",
   "Settings": "Settings",
   "DifficultlyLevel": "Difficultly level",
+  "Level": "Level",
   "Easy" : "Easy",
   "Medium" : "Medium",
   "Hard" : "Hard",
@@ -118,7 +119,12 @@
   "BackToSettings": "Back to settings",
   "DeleteAllStatistics": "Delete statics",
 
+  "WrongSolution": "Wrong solution",
+  "CorrectSolution": "Correct solution",
+
   "Animal": "Animal",
+
+  "TaskFinish": "The task is over! Point earned",
 
   "MemoryCard": "Memory card",
   "MemoryCardDescription":"Memory card games are a type of matching game that is often used as a cognitive and educational exercise. Players take turns flipping over two cards at a time, with the goal of finding pairs of matching cards. Find them all.",
@@ -128,7 +134,28 @@
 
   "MemorySound": "Memory sound",
   "MemorySoundDescription":"You will hear sounds one after the other and have to imitate them in the correct order.",
+  "MemorySoundTry": "Try the sounds before you start.",
   "SoundType": "Sound type",
+  "MemorySoundInstructions": "Try to imitate the sounds in the correct order.",
+
+
+  "Bird": "Bird",
+  "Pig": "Pig",
+  "Cat": "Cat",
+  "Owl": "Owl",
+  "Eagle": "Eagle",
+  "Farm": "Farm",
+  "Chicken": "Chicken",
+  "Sheep": "Sheep",
+  "Horse": "Horse",
+  "Human": "Human",
+  "Why": "Why",
+  "Instrument": "Instrument",
+  "Guitar": "Guitar",
+  "Piano": "Piano",
+  "Pet": "Pet",
+  "GuineaPig": "Guinea pig",
+  "Dog": "Dog",
 
   "MemoryNumber": "Memory number",
   "MemoryNumberDescription": "You will see a number and then rely on your memory to write it down",

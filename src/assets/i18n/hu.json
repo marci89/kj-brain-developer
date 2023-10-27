@@ -106,6 +106,7 @@
   "Start": "Indítás",
   "Settings": "Beállítások",
   "DifficultlyLevel": "Nehézségi szint",
+  "Level": "Szint",
   "Easy" : "Könnyű",
   "Medium" : "Közepes",
   "Hard" : "Nehéz",
@@ -119,7 +120,11 @@
   "BackToSettings": "Vissza a beállításokhoz",
   "DeleteAllStatistics": "Statisztika törlése",
 
+  "WrongSolution": "Hibás megoldás",
+  "CorrectSolution": "Helyes megoldás",
+
   "Animal": "Állat",
+  "TaskFinish": "Véget ért a feladat! Szerzett pont",
 
   "MemoryCard": "Memória kártya",
   "MemoryCardDescription": "A memóriakártya-játék egyfajta párosítási játék, amelyet gyakran kognitív és oktatási gyakorlatként használnak. A játékosok felváltva forgatnak fel egyszerre két kártyát azzal a céllal, hogy egyező kártyapárokat találjanak. Keresse meg őket.",
@@ -131,7 +136,27 @@
 
   "MemorySound": "Hang memória",
   "MemorySoundDescription": "Hangokat fog hallani egymás után és utánozni kell helyes sorrendben őket.",
-  "SoundType": "hang típus",
+  "MemorySoundTry": "Próbálja ki a hangokat kezdés előtt.",
+  "SoundType": "Hang típus",
+  "MemorySoundInstructions": "Próbálja utánozni a hangokat helyes sorrendben.",
+
+  "Bird": "Madár",
+  "Pig": "Malac",
+  "Cat": "Macska",
+  "Owl": "Bagoly",
+  "Eagle": "Sas",
+  "Farm": "Farm",
+  "Chicken": "Tyúk",
+  "Sheep": "Bárány",
+  "Horse": "Ló",
+  "Human": "Ember",
+  "Why": "Miért",
+  "Instrument": "Hangszer",
+  "Guitar": "Gitár",
+  "Piano": "Zongora",
+  "Pet": "Házi kedvenc",
+  "GuineaPig": "Tengeri malac",
+  "Dog": "Kutya",
 
   "MemoryNumber": "Szám memória",
   "MemoryNumberDescription": "Látni fog egy számot, majd a memóriájára hagyatkozva lekell írnia",

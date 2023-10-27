@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
-import { MemoryCardPictureModel, MemoryCardSettingsModel, MemoryCardSizeType } from '../interfaces/memory-card.interface';
-import { DifficultType } from '../interfaces/game.interface';
+import { MemoryCardPictureModel, MemoryCardSettingsModel, MemoryCardSizeType } from '../../interfaces/games/memory-card.interface';
+import { DifficultType } from '../../interfaces/games/game.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,6 @@ export class MemoryCardService {
   constructor() {
     this.initMemoryCardPictureModel()
   }
-
-
 
   //Read settings
   readSettings() {
@@ -67,7 +65,7 @@ export class MemoryCardService {
       const animal: MemoryCardPictureModel = {
         id: 1,
         name: "Animal",
-        isNightmare: true
+        isNightmare: false
       };
 
       this.memoryCardPictureModels.push(animal);

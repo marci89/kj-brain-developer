@@ -1,4 +1,4 @@
-import { DifficultType } from "./game.interface";
+import { DifficultType } from "./games/game.interface";
 
 //Create training statistics server request
 export interface CreateTrainingStatisticsRequest {
