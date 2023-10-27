@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DifficultType } from 'src/app/interfaces/game.interface';
 import { MemoryCardPictureModel, MemoryCardSettingsModel, MemoryCardSizeType, MemorycardItem } from 'src/app/interfaces/memory-card.interface';
 import { CreateMemoryCardStatisticsRequest } from 'src/app/interfaces/training.interface';
@@ -41,11 +42,15 @@ export class MemoryCardBoardComponent implements OnInit {
   constructor(
     private memoryCardService: MemoryCardService,
     private statisticsService: StatisticsService,
-    private trainingService: TrainingService
-    ) { }
+    private trainingService: TrainingService,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.settings = this.memoryCardService.readSettings();
+    if (Object.keys(this.settings).length === 0) {
+      this.router.navigate(['practice']);
+    }
 
     const picturemodel = this.memoryCardService.readMemoryCardPictureModelById(this.settings.pictureType);
     if (picturemodel) {
@@ -162,11 +167,17 @@ export class MemoryCardBoardComponent implements OnInit {
         this.matchedCount++;
 
         if (this.matchedCount === this.cardImages.length) {
-          this.isFinished = true;
+          this.finished();
         }
       }
       this.movesCount++;
     }, 1000);
+  }
+
+
+  finished() {
+    this.isFinished = true;
+    this.createStatistics();
   }
 
   //Restart the game
@@ -179,23 +190,18 @@ export class MemoryCardBoardComponent implements OnInit {
   }
 
   trainingContinue(): void {
-    this.createStatistics();
-    this.matchedCount = 0;
-    this.movesCount = 0;
-    this.isFinished = false;
-    this.cardImages = [];
-    this.start();
+    this.trainingService.startMemorySoundGame();
   }
 
-    // create statistics
-    createStatistics() {
-      // Initialize the serviceRequest object
-      const serviceRequest: CreateMemoryCardStatisticsRequest = {
-        moved: this.movesCount,
-        difficult: this.settings.difficultType,
-        lastPictureTypeId : this.settings.pictureType
-      };
+  // create statistics
+  createStatistics() {
+    // Initialize the serviceRequest object
+    const serviceRequest: CreateMemoryCardStatisticsRequest = {
+      moved: this.movesCount,
+      difficult: this.settings.difficultType,
+      lastPictureTypeId: this.settings.pictureType
+    };
 
-      this.statisticsService.createMemoryCard(serviceRequest).subscribe({})
-    }
+    this.statisticsService.createMemoryCard(serviceRequest).subscribe({})
+  }
 }

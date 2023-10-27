@@ -109,6 +109,7 @@
   "Medium" : "Medium",
   "Hard" : "Hard",
   "Nightmare" : "Nightmare",
+  "HardLabel": "(hard)",
   "Size": "Size",
   "Small": "Small",
   "Large": "Large",
@@ -144,8 +145,8 @@
   "StatisticsTitle": "Statistics on the course of development",
   "StatisticsDescription": "The results are presented in serial order according to the date of completion of the task.",
   "StatisticsNumber": "How many task results would you like to see?",
-  "StatisticsInfo": "Only daily tasks are logged.",
-  "TrainingStatistics": "Daily Task Statistics",
+  "StatisticsInfo": "Only daily tasks are logged, except for the memory card game, because it is also logged in practice mode.",
+  "TrainingStatistics": "Daily Tasks Statistics",
   "MemoryCardStatistics": "Memory Card Statistics",
   "MemoryCardStatisticsDescription": "The memory card is luck-based, so it has a separate set of statistics. It keeps track of the number of steps",
 

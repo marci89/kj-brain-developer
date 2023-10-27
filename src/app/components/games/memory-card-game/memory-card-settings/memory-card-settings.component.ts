@@ -46,8 +46,16 @@ export class MemoryCardSettingsComponent implements OnInit {
         value: element.id,
       });
     });
-    }
+  }
 
+  //Check hard cards
+  isHardLabel(id: number) {
+    const picturemodel = this.memoryCardService.readMemoryCardPictureModelById(id);
+    if (picturemodel) {
+      return picturemodel.isNightmare ? "HardLabel" : "";
+    }
+    return "";
+  }
 
   //init sizeTypes dropdown list
   initSizeTypes() {
@@ -69,37 +77,13 @@ export class MemoryCardSettingsComponent implements OnInit {
     this.settings.difficultType = DifficultType.Easy;
   }
 
-  //start learning
+  //start game
   start() {
     this.settings.pictureType = this.selectedPictureType;
     this.settings.sizeType = this.selectedSizeType;
-    this.setDifficult(this.selectedSizeType);
+    this.settings.difficultType = this.memoryCardService.setDifficult(this.selectedSizeType);
 
     this.memoryCardService.setSettings(this.settings);
     this.router.navigate(['memory-card']);
-  }
-
-
-  //Routing depends on LearnModeType
-  setDifficult(enumValue: MemoryCardSizeType) {
-
-    const memoryCardPictureModel = this.memoryCardService.readMemoryCardPictureModelById(this.settings.pictureType);
-    switch (enumValue) {
-      case MemoryCardSizeType.Small:
-        this.settings.difficultType = DifficultType.Easy;
-        break;
-      case MemoryCardSizeType.Medium:
-        this.settings.difficultType = DifficultType.Medium;
-        break;
-      case MemoryCardSizeType.Large:
-        this.settings.difficultType = DifficultType.Hard;
-        break;
-      default:
-        this.settings.difficultType = DifficultType.Easy;
-        break;
-    }
-
-    if (memoryCardPictureModel?.isNightmare && this.settings.difficultType === DifficultType.Hard)
-      this.settings.difficultType = DifficultType.Nightmare;
   }
 }

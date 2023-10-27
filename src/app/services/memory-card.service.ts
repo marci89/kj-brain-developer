@@ -1,5 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
-import { MemoryCardPictureModel, MemoryCardSettingsModel } from '../interfaces/memory-card.interface';
+import { MemoryCardPictureModel, MemoryCardSettingsModel, MemoryCardSizeType } from '../interfaces/memory-card.interface';
+import { DifficultType } from '../interfaces/game.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -26,18 +27,6 @@ export class MemoryCardService {
     this.settings = request;
   }
 
-  //Init more complex card picture models
-  initMemoryCardPictureModel() {
-
-    const animal: MemoryCardPictureModel = {
-      id: 1,
-      name: "Animal",
-      isNightmare: false
-    };
-
-    this.memoryCardPictureModels.push(animal);
-  }
-
   //Get memory cards
   listMemoryCardPictureModel() {
     return this.memoryCardPictureModels;
@@ -47,4 +36,40 @@ export class MemoryCardService {
   readMemoryCardPictureModelById(id: number) {
     return this.memoryCardPictureModels.find(x => x.id === id);
   }
+
+  //set difficult
+  setDifficult(enumValue: MemoryCardSizeType) : DifficultType {
+
+    const memoryCardPictureModel = this.readMemoryCardPictureModelById(this.settings.pictureType);
+    switch (enumValue) {
+      case MemoryCardSizeType.Small:
+        this.settings.difficultType = DifficultType.Easy;
+        break;
+      case MemoryCardSizeType.Medium:
+        this.settings.difficultType = DifficultType.Medium;
+        break;
+      case MemoryCardSizeType.Large:
+        this.settings.difficultType = DifficultType.Hard;
+        break;
+      default:
+        this.settings.difficultType = DifficultType.Easy;
+        break;
+    }
+
+    if (memoryCardPictureModel?.isNightmare && this.settings.difficultType === DifficultType.Hard)
+      this.settings.difficultType = DifficultType.Nightmare;
+    return this.settings.difficultType;
+  }
+
+    //Init more complex card picture models
+    initMemoryCardPictureModel() {
+
+      const animal: MemoryCardPictureModel = {
+        id: 1,
+        name: "Animal",
+        isNightmare: true
+      };
+
+      this.memoryCardPictureModels.push(animal);
+    }
 }

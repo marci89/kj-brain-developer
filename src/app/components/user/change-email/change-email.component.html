@@ -1,6 +1,6 @@
 <div class="container">
   <form [formGroup]="changeEmailForm" (ngSubmit)="changeEmail()" autocomplete="off">
-    <h3 class="text-center mt-2">{{'ChangeEmail' | translate }}</h3>
+    <h3 class="text-center mt-2 bold-element">{{'ChangeEmail' | translate }}</h3>
     <hr>
 <!-- Any error -->
     <div *ngIf="serverError" class="alert alert-danger">

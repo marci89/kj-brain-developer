@@ -4,9 +4,11 @@
   background-color: #134D55;
 }
 
+
 /* card styles */
-.card-body {
+.card {
   background-color: #ced3c6ee !important;
+  border-radius: 2rem ;
 }
 
 .alert-danger{

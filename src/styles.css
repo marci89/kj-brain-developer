@@ -11,6 +11,9 @@
 /* glow animation css from common folder*/
 @import './app/common/css/glow-animation.css';
 
+/* scrollbar css from common folder*/
+@import './app/common/css/scrollbar.css';
+
 
 body {
   background-color: #bbbec2;
@@ -26,4 +29,8 @@ p, label {
   padding: 10px ;
   border-radius: 2rem ;
   margin: 5px ;
+}
+
+.bold-element{
+  font-weight: bold;
 }
