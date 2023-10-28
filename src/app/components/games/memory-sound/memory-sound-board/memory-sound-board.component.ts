@@ -41,7 +41,8 @@ export class MemorySoundBoardComponent implements OnInit {
   mySounds: number[] = [];
   //buttons
   buttons: Sound[] = [];
-
+  //Analize the sound order was correct or not, because if it was bad, not create new sound to sounds array.
+  isSoundCorrect: boolean = true;
   //sound type label
   soundType: string = "";
   //current sound index
@@ -71,7 +72,7 @@ export class MemorySoundBoardComponent implements OnInit {
 
     this.init();
     this.createButtons();
-    this.createSounds();
+    this.createSound();
   }
 
   //Set labels
@@ -93,16 +94,12 @@ export class MemorySoundBoardComponent implements OnInit {
 
   }
 
-  //create sounds by level value
-  createSounds() {
-    this.sounds = [];
+  //create sound
+  createSound() {
     this.mySounds = [];
-
-    for (let i = 1; i <= this.level; i++) {
-      const randomNumber = Math.random() * (3);
-      const soundId = Math.floor(randomNumber) + 1;
-      this.sounds.push(soundId);
-    }
+    const randomNumber = Math.random() * (3);
+    const soundId = Math.floor(randomNumber) + 1;
+    this.sounds.push(soundId);
   }
 
   //Play the next sound from sounds array
@@ -144,6 +141,8 @@ export class MemorySoundBoardComponent implements OnInit {
 
       // if not the same
       if (this.mySounds[index] !== this.sounds[index]) {
+        this.isSoundCorrect = false;
+        this.mySounds = [];
         this.setMessage(false)
         this.opportunities--;
 
@@ -161,6 +160,7 @@ export class MemorySoundBoardComponent implements OnInit {
 
       //if the round finsihed successful
       if (this.mySounds.length === this.sounds.length) {
+        this.isSoundCorrect = true;
         this.setMessage(true)
         this.level++;
         this.score++;
@@ -174,7 +174,11 @@ export class MemorySoundBoardComponent implements OnInit {
     this.isFreeze = true;
     setTimeout(() => {
       this.message = "";
-      this.createSounds();
+
+      if (this.isSoundCorrect) {
+        this.createSound();
+      }
+
       this.playSounds();
     }, 4000);
   }
@@ -195,6 +199,7 @@ export class MemorySoundBoardComponent implements OnInit {
 
   //Restart the game
   restart(): void {
+    this.isSoundCorrect = true;
     this.score = 0;
     this.level = 1;
     this.opportunities = this.settings.opportunities;
@@ -202,7 +207,7 @@ export class MemorySoundBoardComponent implements OnInit {
     this.sounds = [];
     this.mySounds = [];
     this.message = "";
-    this.createSounds();
+    this.createSound();
     this.start();
   }
 
