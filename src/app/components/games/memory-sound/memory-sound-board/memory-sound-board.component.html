@@ -54,7 +54,7 @@
       <div class="row">
       <div class="col-6 mx-auto">
         <div *ngIf="message"
-          [ngClass]="{'error': !isSuccesssMessage, 'success': isSuccesssMessage, 'message mt-3 mb-3': true}">
+          [ngClass]="{'error-message': !isSuccesssMessage, 'success-message': isSuccesssMessage, 'message mt-3 mb-3': true}">
           {{message}}
         </div>
       </div>

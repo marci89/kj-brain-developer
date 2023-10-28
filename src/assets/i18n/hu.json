@@ -181,6 +181,11 @@
   "MemoryCardStatisticsDescription": "A memória kártya a szerencsén alapszik, így külön statisztikában szerepel. A lépések számából készít statisztikát.",
 
 
+  "NoDailyTask": "Jelenleg minden feladat készen van. Holnapi napon lesznek új kihívások.",
+  "ThereAreAnyDailyTask": "Vannak elérhető feladatok. Sok sikert hozzájuk!",
+
+
+
   "HomeModule": {
     "Discover": "Fedezze fel, mire képes az elméje",
     "Description": "Gyakorolja a memóriát, a rugalmasságot és még sok mást a világ legnépszerűbb agytorna programjával.",

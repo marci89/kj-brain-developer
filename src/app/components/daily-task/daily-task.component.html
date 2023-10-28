@@ -1,1 +1,21 @@
-<p>daily-task works!</p>
+
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+        <div class="card">
+          <div class="card-body">
+              <h2 class="text-center bold-element">{{'DailyTask' | translate }}</h2>
+
+              <div *ngIf="HasAnyTask" class="text-center mt-5 mb-3">
+                <h4 class="bold-element">{{ 'ThereAreAnyDailyTask' | translate }}</h4>
+                <p-button  styleClass="p-button-oranged me-2 mt-4" (click)="start()" >{{'Start' | translate }}</p-button>
+              </div>
+
+              <div *ngIf="!HasAnyTask" class="text-center mt-5 mb-3">
+                <h4 class="bold-element">{{ 'NoDailyTask' | translate }}</h4>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

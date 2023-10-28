@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from '../common/services/base.service';
 import { HttpClient } from '@angular/common/http';
-import { CreateMemoryCardStatisticsRequest, CreateTrainingStatisticsRequest, ListMemoryCardStatisticsChartRequest, ListTrainingStatisticsChartRequest, MemoryCardStatistics, MemoryCardStatisticsChart, TrainingStatistics, TrainingStatisticsChart } from '../interfaces/training.interface';
+import { CreateMemoryCardStatisticsRequest, CreateTrainingStatisticsRequest, DailyTrainingStatistics, ListMemoryCardStatisticsChartRequest, ListTrainingStatisticsChartRequest, MemoryCardStatistics, MemoryCardStatisticsChart, TrainingStatistics, TrainingStatisticsChart } from '../interfaces/training.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +12,9 @@ export class StatisticsService extends BaseService {
     super();
   }
 
-  //Get training statistics list
-  listTraining() {
-    return this.http.get<TrainingStatistics[]>(this.baseUrl + 'Statistics/ListTraining');
+  //Get daily training statistics
+  readDailyTraining() {
+    return this.http.get<DailyTrainingStatistics>(this.baseUrl + 'Statistics/DailyTraining');
   }
   //Get Training statistics list for chart
   listTrainingForChart(request: ListTrainingStatisticsChartRequest) {

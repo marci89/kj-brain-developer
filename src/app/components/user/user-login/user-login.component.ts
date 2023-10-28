@@ -34,7 +34,7 @@ export class UserLoginComponent {
   login() {
     this.accountService.login(this.loginForm.value).subscribe({
       next: _ => {
-        this.router.navigateByUrl('/game');
+        this.router.navigateByUrl('/daily-task');
       },
       error: error => {
         this.serverError = error.error;

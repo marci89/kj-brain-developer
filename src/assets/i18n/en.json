@@ -178,6 +178,8 @@
   "MemoryCardStatistics": "Memory Card Statistics",
   "MemoryCardStatisticsDescription": "The memory card is luck-based, so it has a separate set of statistics. It keeps track of the number of steps",
 
+  "NoDailyTask": "All tasks are now complete. There will be new challenges tomorrow.",
+  "ThereAreAnyDailyTask": "There are tasks available. Good luck to them!",
 
   "HomeModule": {
     "Discover": "Discover what your mind can do",

@@ -199,7 +199,8 @@ export class MemoryCardBoardComponent implements OnInit {
     const serviceRequest: CreateMemoryCardStatisticsRequest = {
       moved: this.movesCount,
       difficult: this.settings.difficultType,
-      lastPictureTypeId: this.settings.pictureType
+      pictureTypeId: this.settings.pictureType,
+      isPractice: this.settings.isPracticeMode
     };
 
     this.statisticsService.createMemoryCard(serviceRequest).subscribe({})

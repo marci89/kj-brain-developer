@@ -222,6 +222,7 @@ export class MemorySoundBoardComponent implements OnInit {
     const serviceRequest: CreateTrainingStatisticsRequest = {
       score: this.score,
       trainingMode: TrainingModeType.MemorySound,
+      soundTypeId: this.memorySoundModel.id
     };
 
     this.statisticsService.createTraining(serviceRequest).subscribe({})
