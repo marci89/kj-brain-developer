@@ -30,6 +30,8 @@ export class MemorySoundBoardComponent implements OnInit {
   opportunities: number = 2;
   //score
   score: number = 0;
+  //freeze sounds when they are used
+  isFreeze: boolean = false;
 
   // memory sound object model
   memorySoundModel: MemorySoundModel = {} as MemorySoundModel;
@@ -39,15 +41,13 @@ export class MemorySoundBoardComponent implements OnInit {
   mySounds: number[] = [];
   //buttons
   buttons: Sound[] = [];
-  //freeze sounds when they are used
-  isFreeze: boolean = false;
 
   //sound type label
   soundType: string = "";
-
-
+  //current sound index
   currentSoundIndex: number = 0;
-  interval: any; // variable to hold the interval reference
+  //sound play interval
+  interval: any;
 
 
   constructor(
@@ -111,12 +111,14 @@ export class MemorySoundBoardComponent implements OnInit {
       this.playSound(this.sounds[this.currentSoundIndex]);
       this.currentSoundIndex++;
     } else {
+      this.isFreeze = false;
       clearInterval(this.interval);
     }
   }
 
   //play all sound from sounds array
   playSounds() {
+    this.isFreeze = true;
     this.currentSoundIndex = 0;
     const interval = 2000;
 
@@ -135,37 +137,41 @@ export class MemorySoundBoardComponent implements OnInit {
 
   // click one of sound buttons
   clickSoundButton(id: number) {
-    this.playSound(id);
-    this.mySounds.push(id);
-    const index = this.mySounds.length-1;
+    if (!this.isFreeze) {
+      this.playSound(id);
+      this.mySounds.push(id);
+      const index = this.mySounds.length - 1;
 
-    // if not the same
-    if(this.mySounds[index] !== this.sounds[index]){
-      this.setMessage(false)
-      this.opportunities--;
+      // if not the same
+      if (this.mySounds[index] !== this.sounds[index]) {
+        this.setMessage(false)
+        this.opportunities--;
 
-      //if ending
-      if (this.opportunities === 0){
-        this.isFinished = true;
-        this.finished();
-      } else {
-        this.nextLevel();
+        //if ending
+        if (this.opportunities === 0) {
+          this.isFinished = true;
+          this.finished();
+        } else {
+          this.nextLevel();
+        }
+
+        return;
       }
 
-      return;
-    }
 
-    //if the round finsihed successful
-     if (this.mySounds.length === this.sounds.length){
-      this.setMessage(true)
-      this.level++;
-      this.score++;
-      this.nextLevel();
+      //if the round finsihed successful
+      if (this.mySounds.length === this.sounds.length) {
+        this.setMessage(true)
+        this.level++;
+        this.score++;
+        this.nextLevel();
+      }
     }
   }
 
   //set next level
-  nextLevel(){
+  nextLevel() {
+    this.isFreeze = true;
     setTimeout(() => {
       this.message = "";
       this.createSounds();
@@ -182,7 +188,7 @@ export class MemorySoundBoardComponent implements OnInit {
   //game finish
   finished() {
     this.isFinished = true;
-    if(!this.settings.isPracticeMode){
+    if (!this.settings.isPracticeMode) {
       this.createStatistics();
     }
   }

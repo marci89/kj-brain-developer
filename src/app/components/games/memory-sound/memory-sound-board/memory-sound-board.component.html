@@ -65,7 +65,7 @@
         <div class="col-12 col-md-12 col-sm-12 mb-3">
           <div class="d-flex justify-content-center">
             <div *ngFor="let button of buttons">
-              <p-button type="button" styleClass="p-button-oranged mx-2" (click)="clickSoundButton(button.id)">{{
+              <p-button [disabled]="isFreeze" type="button" styleClass="p-button-oranged mx-2" (click)="clickSoundButton(button.id)">{{
                 button.name | translate }}</p-button>
             </div>
           </div>

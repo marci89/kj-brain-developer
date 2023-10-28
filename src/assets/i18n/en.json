@@ -148,14 +148,15 @@
   "Chicken": "Chicken",
   "Sheep": "Sheep",
   "Horse": "Horse",
-  "Human": "Human",
-  "Why": "Why",
   "Instrument": "Instrument",
   "Guitar": "Guitar",
   "Piano": "Piano",
   "Pet": "Pet",
   "GuineaPig": "Guinea pig",
   "Dog": "Dog",
+
+  "WhatDayIsIt": "What day is it?",
+  "WhatDayIsItDescription": "Guess which day it was/will be from the statement.",
 
   "MemoryNumber": "Memory number",
   "MemoryNumberDescription": "You will see a number and then rely on your memory to write it down",

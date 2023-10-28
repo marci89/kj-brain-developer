@@ -139,7 +139,6 @@
   "MemorySoundTry": "Próbálja ki a hangokat kezdés előtt.",
   "SoundType": "Hang típus",
   "MemorySoundInstructions": "Próbálja utánozni a hangokat helyes sorrendben.",
-
   "Bird": "Madár",
   "Pig": "Malac",
   "Cat": "Macska",
@@ -149,14 +148,15 @@
   "Chicken": "Tyúk",
   "Sheep": "Bárány",
   "Horse": "Ló",
-  "Human": "Ember",
-  "Why": "Miért",
   "Instrument": "Hangszer",
   "Guitar": "Gitár",
   "Piano": "Zongora",
   "Pet": "Házi kedvenc",
   "GuineaPig": "Tengeri malac",
   "Dog": "Kutya",
+
+  "WhatDayIsIt": "Milyen nap van?",
+  "WhatDayIsItDescription": "Találd ki az állításból melyik nap volt/lesz.",
 
   "MemoryNumber": "Szám memória",
   "MemoryNumberDescription": "Látni fog egy számot, majd a memóriájára hagyatkozva lekell írnia",

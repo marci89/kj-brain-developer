@@ -1,7 +1,7 @@
 <div class="conatiner">
   <h1 class="text-center bold-element mt-3">{{'Practice' | translate }}</h1>
   <div class="row col-10 mt-1 mx-auto">
-       <!--  MemoryCard -->
+    <!--  MemoryCard -->
     <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-center mx-auto mb-3 ">
       <div class="card mx-auto">
         <div class="card-body">
@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-       <!--  MemorySound -->
+    <!--  MemorySound -->
     <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-center mx-auto mb-3 ">
       <div class="card mx-auto">
         <div class="card-body">
@@ -21,27 +21,29 @@
         </div>
       </div>
     </div>
-   <!--  MemoryNumber-->
+    <!--  WhatDayIsIt -->
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-center mx-auto mb-3 ">
+      <div class="card mx-auto">
+        <div class="card-body">
+          <img [src]="'./assets/images/games/memory-sound.png'" class="game-image" />
+          <h2>{{'WhatDayIsIt' | translate }}</h2>
+          <p-button styleClass="p-button-oranged" routerLink="/what-day-is-it-settings">{{'Game' | translate
+            }}</p-button>
+        </div>
+      </div>
+    </div>
+    <!--  MemoryNumber-->
     <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-center mx-auto mb-3 ">
       <div class="card mx-auto">
         <div class="card-body">
           <img [src]="'./assets/images/games/memory-card.png'" class="game-image" />
           <h2>{{'MemoryNumber' | translate }}</h2>
-          <p-button styleClass="p-button-oranged" routerLink="/memory-number-settings">{{'Game' | translate }}</p-button>
+          <p-button styleClass="p-button-oranged" routerLink="/memory-number-settings">{{'Game' | translate
+            }}</p-button>
         </div>
       </div>
     </div>
-   <!--  MemoryMatrix -->
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-center mx-auto mb-3 ">
-      <div class="card mx-auto">
-        <div class="card-body">
-          <img [src]="'./assets/images/games/memory-card.png'" class="game-image" />
-          <h2>{{'MemoryMatrix' | translate }}</h2>
-          <p-button styleClass="p-button-oranged" routerLink="/memory-matrix-settings">{{'Game' | translate }}</p-button>
-        </div>
-      </div>
-    </div>
-   <!--  Math -->
+    <!--  Math -->
     <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-center mx-auto mb-3 ">
       <div class="card mx-auto">
         <div class="card-body">
@@ -51,6 +53,16 @@
         </div>
       </div>
     </div>
-
+    <!--  MemoryMatrix -->
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-center mx-auto mb-3 ">
+      <div class="card mx-auto">
+        <div class="card-body">
+          <img [src]="'./assets/images/games/memory-card.png'" class="game-image" />
+          <h2>{{'MemoryMatrix' | translate }}</h2>
+          <p-button styleClass="p-button-oranged" routerLink="/memory-matrix-settings">{{'Game' | translate
+            }}</p-button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
