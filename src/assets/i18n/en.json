@@ -94,12 +94,14 @@
 
 
   "Game": "Game",
-  "DailyTask": "Daily task",
+  "DailyTask": "Daily tasks",
   "Practice": "Practice",
   "Stats": "Stats",
   "Score": "Score",
+  "BestScore": "Your best score",
   "Opportunities": "Opportunities",
   "GameFinish": "Congratulation! You managed to solve it!",
+  "Tasks": "Tasks",
 
   "Memory": "Memory",
   "Start": "Start",

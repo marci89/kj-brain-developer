@@ -30,6 +30,8 @@ export class MemorySoundBoardComponent implements OnInit {
   opportunities: number = 2;
   //score
   score: number = 0;
+  //best score
+  bestScore: number = 0;
   //freeze sounds when they are used
   isFreeze: boolean = false;
 
@@ -80,6 +82,7 @@ export class MemorySoundBoardComponent implements OnInit {
     this.soundType = this.memorySoundModel.name;
     this.level = 1;
     this.opportunities = this.settings.opportunities;
+    this.bestScore = this.trainingService?.dailyTrainingStatistics?.bestMemorySoundScore;
   }
 
   //Create sound buttons
@@ -192,6 +195,11 @@ export class MemorySoundBoardComponent implements OnInit {
   //game finish
   finished() {
     this.isFinished = true;
+
+    if(this.bestScore < this.score){
+      this.bestScore = this.score;
+    }
+
     if (!this.settings.isPracticeMode) {
       this.createStatistics();
     }
@@ -212,7 +220,7 @@ export class MemorySoundBoardComponent implements OnInit {
   }
 
   //if training mode
-  trainingContinue(): void {
+  continueTraining(): void {
     this.trainingService.startMemorySoundGame();
   }
 

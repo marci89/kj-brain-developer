@@ -10,10 +10,15 @@ import { MemorySoundService } from './games/memory-sound.service';
   providedIn: 'root'
 })
 export class TrainingService {
+  //max values
+   PICTURE_TYPE_MAX_VALUE : number = 1;
+   SOUND_TYPE_MAX_VALUE : number = 5;
 
+  //settings
   memoryCardSettings: MemoryCardSettingsModel = {} as MemoryCardSettingsModel;
   memorySoundSettings: MemorySoundSettingsModel = {} as MemorySoundSettingsModel;
 
+  //daily training object
   dailyTrainingStatistics: DailyTrainingStatistics = {} as DailyTrainingStatistics;
 
 
@@ -23,9 +28,9 @@ export class TrainingService {
     private memorySoundService: MemorySoundService,
   ) { }
 
+  //start memory card game
   startMemoryCardGame(){
-
-    const pictureType = this.dailyTrainingStatistics.lastPictureTypeId;
+    const pictureType = this.generateNextTypeId(this.dailyTrainingStatistics.lastPictureTypeId, this.PICTURE_TYPE_MAX_VALUE);
     const cardSize = this.dailyTrainingStatistics.memoryCardSizeType;
     const difficult = this.memoryCardService.setDifficult(cardSize)
 
@@ -38,8 +43,9 @@ export class TrainingService {
     this.router.navigate(['memory-card']);
   }
 
+//start memory sound game
   startMemorySoundGame(){
-    const soundType = this.dailyTrainingStatistics.lastSoundTypeId;
+    const soundType = this.generateNextTypeId(this.dailyTrainingStatistics.lastSoundTypeId, this.SOUND_TYPE_MAX_VALUE);
 
     this.memorySoundSettings.isPracticeMode = false;
     this.memorySoundSettings.SoundType = soundType;
@@ -49,15 +55,33 @@ export class TrainingService {
     this.router.navigate(['memory-sound']);
   }
 
+  //start memory card game
   startWhatDayIsItGame(){
   }
 
+  //start memory number game
   startMemoryNumberGame(){
   }
 
+  //start math game
   startMathGame(){
   }
 
+  //start memory matrix game
   startMemoryMatrixGame(){
+  }
+
+  //calculate pictureTypeId and soundTypeId
+  private generateNextTypeId(lastId: number, maxValue: number) : number{
+    if(lastId === maxValue || lastId === 0){
+      return 1;
+    }
+
+    if(lastId < maxValue){
+      return ++lastId;
+    }
+
+    const randomNumber = Math.random() * (maxValue);
+    return Math.floor(randomNumber) + 1;
   }
 }

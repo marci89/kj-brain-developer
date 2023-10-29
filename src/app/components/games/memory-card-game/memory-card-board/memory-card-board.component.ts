@@ -189,7 +189,7 @@ export class MemoryCardBoardComponent implements OnInit {
     this.start();
   }
 
-  trainingContinue(): void {
+  continueTraining(): void {
     this.trainingService.startMemorySoundGame();
   }
 

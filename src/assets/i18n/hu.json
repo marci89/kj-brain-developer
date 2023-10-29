@@ -95,12 +95,14 @@
 
 
   "Game": "Játék",
-  "DailyTask": "Napi feladat",
+  "DailyTask": "Napi feladatok",
   "Practice": "Gyakorlás",
   "Stats": "Statisztika",
   "Score": "Pont",
+  "BestScore": "A legjobb pontszám",
   "Opportunities": "Lehetőségek",
   "GameFinish": "Gratulálunk! Sikerült megoldanod!",
+  "Tasks": "Feladatok",
 
   "Memory": "Memória",
   "Start": "Indítás",
