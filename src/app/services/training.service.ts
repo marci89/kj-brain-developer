@@ -7,6 +7,8 @@ import { MemorySoundSettingsModel, Sound } from '../interfaces/games/memory-soun
 import { MemorySoundService } from './games/memory-sound.service';
 import { MemoryNumberSettingsModel } from '../interfaces/games/memory-number.interface';
 import { MemoryNumberService } from './games/memory-number.service';
+import { MemoryMatrixService } from './games/memory-matrix.service';
+import { MemoryMatrixSettingsModel } from '../interfaces/games/memory-matrix.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +22,7 @@ export class TrainingService {
   memoryCardSettings: MemoryCardSettingsModel = {} as MemoryCardSettingsModel;
   memorySoundSettings: MemorySoundSettingsModel = {} as MemorySoundSettingsModel;
   memoryNumberSettings: MemoryNumberSettingsModel = {} as MemoryNumberSettingsModel;
+  memoryMatrixSettings: MemoryMatrixSettingsModel = {} as MemoryMatrixSettingsModel;
 
   //daily training object
   dailyTrainingStatistics: DailyTrainingStatistics = {} as DailyTrainingStatistics;
@@ -30,6 +33,7 @@ export class TrainingService {
     private memoryCardService: MemoryCardService,
     private memorySoundService: MemorySoundService,
     private memoryNumberService: MemoryNumberService,
+    private memoryMatrixService: MemoryMatrixService,
   ) { }
 
   //start memory card game
@@ -79,6 +83,11 @@ export class TrainingService {
 
   //start memory matrix game
   startMemoryMatrixGame(){
+    this.memoryMatrixSettings.isPracticeMode = false;
+    this.memoryMatrixSettings.opportunities = 2;
+
+    this.memoryMatrixService.setSettings(this.memoryMatrixSettings);
+    this.router.navigate(['memory-matrix']);
   }
 
   //calculate pictureTypeId and soundTypeId

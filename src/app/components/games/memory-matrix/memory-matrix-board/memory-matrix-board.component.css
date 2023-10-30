@@ -1,0 +1,58 @@
+.message {
+  text-align: center;
+  font-size: 25px;
+  margin: auto;
+  border-radius: 2rem;
+  padding: 20px;
+  color:white;
+}
+
+.matrix-item{
+  background: #134D55;
+}
+
+.marked {
+  background: rgb(153, 80, 20)
+}
+
+.tiny-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 1px;
+  justify-content: center;
+}
+
+.small-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  gap: 1px;
+  justify-content: center;
+}
+
+.medium-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 65px);
+  gap: 1px;
+  justify-content: center;
+}
+
+.large-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 65px);
+  gap: 1px;
+  justify-content: center;
+}
+
+.huge-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 65px);
+  gap: 1px;
+  justify-content: center;
+}
+
+.nightmare-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 45px);
+  gap: 1px;
+  justify-content: center;
+}

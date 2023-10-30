@@ -4,23 +4,9 @@
       <div class="card col-lg-10 col-md-10 col-sm-10 mx-auto" style="padding: 10px;">
         <div class="card-body">
           <div class="text-center mt-3 mb-3">
-            <h2 class="bold-element">{{'MemorySound' | translate}}</h2>
+            <h2 class="bold-element">{{'MemoryMatrix' | translate}}</h2>
           </div>
-          <h5 class="text-center mt-2">{{ 'MemorySoundDescription' | translate }}</h5>
-          <h3 class="text-center mt-3 mb-3">{{'MemorySoundTry' | translate}}</h3>
-
-          <!-- sound buttons -->
-          <div class="row">
-            <div class="col-12 col-md-12 col-sm-6 mb-3">
-              <div class="d-flex justify-content-center">
-                <div *ngFor="let button of buttons">
-                  <p-button type="button" styleClass="p-button-oranged mx-2" (click)="playSound(button.id)">{{
-                    button.name | translate }}</p-button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h3 class="mt-5 bold-element text-center">{{'SoundType' | translate}}: {{soundType | translate}}</h3>
+          <h5 class="text-center mt-2">{{ 'MemoryMatrixDescription' | translate }}</h5>
 
           <div class="row mt-4">
             <div class="col-12 d-flex justify-content-center text-center mt-3">
@@ -47,30 +33,30 @@
     </div>
 
     <!-- Board -->
-    <div class="row col-12 mt-5 mx-auto dark-card">
-      <h3 class="text-center mt-3 mb-3">{{'MemorySoundInstructions' | translate}}</h3>
-
+    <div class="row col-12 mt-2 mx-auto">
       <!-- Any messages -->
-      <div class="col-12 col-lg-6 col-md-6 col-sm-12 mx-auto">
-        <div *ngIf="message"
-          [ngClass]="{'error-message': !isSuccesssMessage, 'success-message': isSuccesssMessage, 'message mt-3 mb-3': true}">
-          {{message}}
+        <div class="col-12 col-lg-6 col-md-6 col-sm-12 mx-auto">
+          <div *ngIf="message"
+            [ngClass]="{'error-message': !isSuccesssMessage, 'success-message': isSuccesssMessage, 'message mt-3 mb-3': true}">
+            {{message}}
+          </div>
         </div>
-      </div>
 
 
-      <!-- sound buttons -->
-      <div class="row mt-5">
-        <div class="col-12 col-md-12 col-sm-12 mb-3">
-          <div class="d-flex justify-content-center">
-            <div *ngFor="let button of buttons">
-              <p-button [disabled]="isFreeze" type="button" styleClass="p-button-oranged mx-2"
-                (click)="clickSoundButton(button.id)">{{
-                button.name | translate }}</p-button>
-            </div>
+      <h2 *ngIf="!message" class="mt-1 mb-3 text-center">{{'Left' | translate}}: {{left}}</h2>
+      <!-- Board -->
+      <div *ngIf="!message" class="mt-2 mb-3">
+        <div [class]="matrixClass">
+          <div *ngFor="let item of matrixItems; let idx=index" class="matrix-item"
+          [style.width]="item.size + 'px'"
+          [style.height]="item.size + 'px'"
+            [ngClass]="{'marked': item.isMarked && item.ismarkedVisibility}"
+            (click)="click(item.id)">
           </div>
         </div>
       </div>
+
+
 
     </div>
   </div>
@@ -90,7 +76,7 @@
               <p-button type="button" styleClass="p-button-oranged" (click)="restart()">{{ 'Restart' | translate
                 }}</p-button>
               <p-button type="button" styleClass="p-button-danger mx-2"
-                routerLink="/memory-sound-settings">{{'BackToSettings'
+                routerLink="/memory-matrix-settings">{{'BackToSettings'
                 | translate
                 }}</p-button>
             </div>
@@ -113,9 +99,13 @@
               <h3 class="bold-element">{{'BestScore' | translate}}: {{bestScore}}</h3>
             </div>
           </div>
+          <div class="col-12 d-flex justify-content-center text-center mt-3">
+            <h2>{{'DailyTaskEnd' | translate}}</h2>
+          </div>
+
           <div class="row">
             <div class="col-12 d-flex justify-content-center text-center mt-3">
-              <p-button type="button" styleClass="p-button-oranged" (click)="continueTraining()">{{ 'Continue' |
+              <p-button type="button" styleClass="p-button-oranged" (click)="endTraining()">{{ 'Ok' |
                 translate
                 }}</p-button>
             </div>

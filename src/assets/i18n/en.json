@@ -122,6 +122,8 @@
   "Continue": "Continue",
   "BackToSettings": "Back to settings",
   "DeleteAllStatistics": "Delete statics",
+  "DailyTaskEnd": "You did the last task. Come back tomorrow for more tasks.",
+  "Ok": "Ok",
 
   "WrongSolution": "Wrong solution",
   "CorrectSolution": "Correct solution",
@@ -170,6 +172,7 @@
 
   "MemoryMatrix": "Memory matrix",
   "MemoryMatrixDescription": "Remember where the marked parts were and click on them.",
+  "Left": "Left",
 
   "Math": "Math",
   "MathDescription": "Mathematical problems.",

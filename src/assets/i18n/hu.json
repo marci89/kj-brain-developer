@@ -106,6 +106,8 @@
   "Tasks": "Feladatok",
   "Type": "Típus",
   "NoRankingList": "Jelenleg nincsen mutatható ranglista erről a játékról.",
+  "DailyTaskEnd": "Megcsináltad az utolsó feladatot is. Térj vissza holnap újabb feladatokért.",
+  "Ok": "Rendben",
 
   "Memory": "Memória",
   "Start": "Indítás",
@@ -171,6 +173,7 @@
 
   "MemoryMatrix": "Memória matrix",
   "MemoryMatrixDescription": "Emlékezzen hol voltak a jelölt részek és kattintson rájuk.",
+  "Left": "Maradt",
 
   "Math": "Matematika",
   "MathDescription": "Matematikai feladatok.",

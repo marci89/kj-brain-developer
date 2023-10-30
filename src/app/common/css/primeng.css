@@ -103,6 +103,12 @@
   border-color: #c47e16;
 }
 
+
+.p-button{
+  background: rgb(207, 107, 24) !important;
+  border-color: rgb(207, 107, 24) !important;
+}
+
 /* oranged button */
 .p-button-oranged {
   background: rgb(207, 107, 24) !important;
