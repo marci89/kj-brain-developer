@@ -5,6 +5,8 @@ import { MemoryCardService } from './games/memory-card.service';
 import { DailyTrainingStatistics } from '../interfaces/training.interface';
 import { MemorySoundSettingsModel, Sound } from '../interfaces/games/memory-sound.interface';
 import { MemorySoundService } from './games/memory-sound.service';
+import { MemoryNumberSettingsModel } from '../interfaces/games/memory-number.interface';
+import { MemoryNumberService } from './games/memory-number.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +19,7 @@ export class TrainingService {
   //settings
   memoryCardSettings: MemoryCardSettingsModel = {} as MemoryCardSettingsModel;
   memorySoundSettings: MemorySoundSettingsModel = {} as MemorySoundSettingsModel;
+  memoryNumberSettings: MemoryNumberSettingsModel = {} as MemoryNumberSettingsModel;
 
   //daily training object
   dailyTrainingStatistics: DailyTrainingStatistics = {} as DailyTrainingStatistics;
@@ -26,6 +29,7 @@ export class TrainingService {
     private router: Router,
     private memoryCardService: MemoryCardService,
     private memorySoundService: MemorySoundService,
+    private memoryNumberService: MemoryNumberService,
   ) { }
 
   //start memory card game
@@ -61,6 +65,12 @@ export class TrainingService {
 
   //start memory number game
   startMemoryNumberGame(){
+    this.memoryNumberSettings.isPracticeMode = false;
+    this.memoryNumberSettings.startDigit = 3;
+    this.memoryNumberSettings.opportunities = 1;
+
+    this.memoryNumberService.setSettings(this.memoryNumberSettings);
+    this.router.navigate(['memory-number']);
   }
 
   //start math game

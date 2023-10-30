@@ -17,6 +17,8 @@ import { MemoryCardBoardComponent } from './components/games/memory-card-game/me
 import { MemorySoundSettingsComponent } from './components/games/memory-sound/memory-sound-settings/memory-sound-settings.component';
 import { MemorySoundBoardComponent } from './components/games/memory-sound/memory-sound-board/memory-sound-board.component';
 import { RankingListComponent } from './components/ranking-list/ranking-list.component';
+import { MemoryNumberSettingsComponent } from './components/games/memory-number/memory-number-settings/memory-number-settings.component';
+import { MemoryNumberBoardComponent } from './components/games/memory-number/memory-number-board/memory-number-board.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -42,6 +44,8 @@ const routes: Routes = [
       { path: 'memory-card', component: MemoryCardBoardComponent },
       { path: 'memory-sound-settings', component: MemorySoundSettingsComponent },
       { path: 'memory-sound', component: MemorySoundBoardComponent },
+      { path: 'memory-number-settings', component: MemoryNumberSettingsComponent },
+      { path: 'memory-number', component: MemoryNumberBoardComponent },
 
 
     ]

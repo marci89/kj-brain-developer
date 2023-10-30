@@ -165,6 +165,9 @@
 
   "MemoryNumber": "Szám memória",
   "MemoryNumberDescription": "Látni fog egy számot, majd a memóriájára hagyatkozva lekell írnia",
+  "StartDigit": "Kezdő számjegyek száma",
+  "TypingMemoryNumber": "Írja be ide az imént látott számot",
+  "Checking": "Ellenőrzés",
 
   "MemoryMatrix": "Memória matrix",
   "MemoryMatrixDescription": "Emlékezzen hol voltak a jelölt részek és kattintson rájuk.",

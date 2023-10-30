@@ -164,6 +164,9 @@
 
   "MemoryNumber": "Memory number",
   "MemoryNumberDescription": "You will see a number and then rely on your memory to write it down",
+  "StartDigit": "Starting digit number",
+  "TypingMemoryNumber": "Type the number you just saw here",
+  "Checking": "Checking",
 
   "MemoryMatrix": "Memory matrix",
   "MemoryMatrixDescription": "Remember where the marked parts were and click on them.",

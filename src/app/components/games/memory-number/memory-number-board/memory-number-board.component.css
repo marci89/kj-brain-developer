@@ -1,0 +1,13 @@
+.message {
+  text-align: center;
+  font-size: 25px;
+  margin: auto;
+  border-radius: 2rem;
+  padding: 20px;
+}
+
+.number-text{
+  word-wrap: break-word;
+  white-space: normal;
+  overflow: hidden;
+}
