@@ -44,6 +44,7 @@ export interface TrainingStatisticsChart {
   memoryNumberChartData: string[];
   memoryMatrixChartData: string[];
   mathChartData: string[];
+  whatDayIsItChartData: string[];
 }
 
 //memory card statistics response for chart

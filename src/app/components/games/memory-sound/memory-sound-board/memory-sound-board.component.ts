@@ -196,7 +196,7 @@ export class MemorySoundBoardComponent implements OnInit {
   finished() {
     this.isFinished = true;
 
-    if(this.bestScore < this.score){
+    if (this.bestScore < this.score) {
       this.bestScore = this.score;
     }
 
@@ -221,7 +221,7 @@ export class MemorySoundBoardComponent implements OnInit {
 
   //if training mode
   continueTraining(): void {
-    this.trainingService.startMemorySoundGame();
+    this.trainingService.startWhatDayIsItGame();
   }
 
   // create statistics

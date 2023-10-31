@@ -6,9 +6,8 @@
           <div class="card-body">
               <h2 class="text-center bold-element">{{'DailyTask' | translate }}</h2>
 
-              <div *ngIf="hasAnyTask && isServerResponseFinished" class="text-center mt-3 mb-3">
+              <div *ngIf="hasAnyTask && isServerResponseFinished" class="text-center mt-3 mb-4">
                 <h4 class="bold-element">{{ 'ThereAreAnyDailyTask' | translate }}</h4>
-                <h4>{{ 'Tasks' | translate }}:</h4>
                 <h6>{{memoryCardGame}}</h6>
                 <h6>{{memorySoundGame}}</h6>
                 <h6>{{whatDayIsItGame}}</h6>

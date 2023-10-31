@@ -103,6 +103,7 @@ export class StatsComponent implements OnInit {
     const memoryNumerColor = 'purple';
     const memoryMatrixColor = 'red';
     const mathColor = 'blue';
+    const whatDayColor = 'orange';
 
     //Set chart data
     this.trainingChartData = {
@@ -116,6 +117,13 @@ export class StatsComponent implements OnInit {
           tension: 0.4
         },
         {
+          label: this.translate.instant('WhatDayIsIt'),
+          data: this.trainingStatistics.whatDayIsItChartData,
+          fill: false,
+          borderColor: whatDayColor,
+          tension: 0.4
+        },
+        {
           label: this.translate.instant('MemoryNumber'),
           data: this.trainingStatistics.memoryNumberChartData,
           fill: false,
@@ -123,17 +131,17 @@ export class StatsComponent implements OnInit {
           tension: 0.4
         },
         {
-          label:this.translate.instant('MemoryMatrix'),
-          data: this.trainingStatistics.memoryMatrixChartData,
-          fill: false,
-          borderColor: memoryMatrixColor,
-          tension: 0.4
-        },
-        {
           label: this.translate.instant('Math'),
           data: this.trainingStatistics.mathChartData,
           fill: false,
           borderColor: mathColor,
+          tension: 0.4
+        },
+        {
+          label:this.translate.instant('MemoryMatrix'),
+          data: this.trainingStatistics.memoryMatrixChartData,
+          fill: false,
+          borderColor: memoryMatrixColor,
           tension: 0.4
         }
       ]
