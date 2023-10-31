@@ -11,6 +11,8 @@ import { MemoryMatrixService } from './games/memory-matrix.service';
 import { MemoryMatrixSettingsModel } from '../interfaces/games/memory-matrix.interface';
 import { WhatDayIsItSettingsModel } from '../interfaces/games/what-day-is-it.interface';
 import { WhatDayIsItService } from './games/what-day-is-it.service';
+import { MathSettingsModel } from '../interfaces/games/math.interface';
+import { MathService } from './games/math.service';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +27,7 @@ export class TrainingService {
   memorySoundSettings: MemorySoundSettingsModel = {} as MemorySoundSettingsModel;
   whatDayIsItSettings: WhatDayIsItSettingsModel = {} as WhatDayIsItSettingsModel;
   memoryNumberSettings: MemoryNumberSettingsModel = {} as MemoryNumberSettingsModel;
+  mathSettings: MathSettingsModel = {} as MathSettingsModel;
   memoryMatrixSettings: MemoryMatrixSettingsModel = {} as MemoryMatrixSettingsModel;
 
   //daily training object
@@ -37,6 +40,7 @@ export class TrainingService {
     private memorySoundService: MemorySoundService,
     private whatDayIsItService : WhatDayIsItService,
     private memoryNumberService: MemoryNumberService,
+    private mathService: MathService,
     private memoryMatrixService: MemoryMatrixService,
   ) { }
 
@@ -88,6 +92,11 @@ export class TrainingService {
 
   //start math game
   startMathGame(){
+    this.mathSettings.isPracticeMode = false;
+    this.mathSettings.opportunities = 1;
+
+    this.mathService.setSettings(this.mathSettings);
+    this.router.navigate(['math']);
   }
 
   //start memory matrix game

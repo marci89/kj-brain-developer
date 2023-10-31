@@ -39,6 +39,8 @@ import { MemoryMatrixBoardComponent } from './components/games/memory-matrix/mem
 import { MemoryMatrixSettingsComponent } from './components/games/memory-matrix/memory-matrix-settings/memory-matrix-settings.component';
 import { WhatDayIsItSettingsComponent } from './components/games/what-day-is-it/what-day-is-it-settings/what-day-is-it-settings.component';
 import { WhatDayIsItBoardComponent } from './components/games/what-day-is-it/what-day-is-it-board/what-day-is-it-board.component';
+import { MathBoardComponent } from './components/games/math/math-board/math-board.component';
+import { MathSettingsComponent } from './components/games/math/math-settings/math-settings.component';
 
 
 
@@ -73,7 +75,9 @@ import { WhatDayIsItBoardComponent } from './components/games/what-day-is-it/wha
     MemoryMatrixBoardComponent,
     MemoryMatrixSettingsComponent,
     WhatDayIsItSettingsComponent,
-    WhatDayIsItBoardComponent
+    WhatDayIsItBoardComponent,
+    MathBoardComponent,
+    MathSettingsComponent
   ],
   imports: [
     BrowserModule,

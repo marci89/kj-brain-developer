@@ -10,7 +10,6 @@ import { WhatDayIsItService } from 'src/app/services/games/what-day-is-it.servic
   styleUrls: ['./what-day-is-it-settings.component.css']
 })
 export class WhatDayIsItSettingsComponent implements OnInit {
-  time: number = 15;
   opportunities: number = 1;
 
   settings: WhatDayIsItSettingsModel = {} as WhatDayIsItSettingsModel;

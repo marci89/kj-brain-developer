@@ -103,7 +103,7 @@ export interface DailyTrainingStatistics {
   bestMemorySoundScore: number;
   bestWhatDayIsItScore: number;
   bestMemoryNumberScore: number;
-  bestMathdScore: number;
+  bestMathScore: number;
   bestMemoryMatrixScore: number;
 
   lastPictureTypeId: number;

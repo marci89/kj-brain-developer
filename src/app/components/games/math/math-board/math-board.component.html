@@ -4,9 +4,9 @@
       <div class="card col-lg-10 col-md-10 col-sm-10 mx-auto" style="padding: 10px;">
         <div class="card-body">
           <div class="text-center mt-3 mb-3">
-            <h2 class="bold-element">{{'WhatDayIsIt' | translate}}</h2>
+            <h2 class="bold-element">{{'Math' | translate}}</h2>
           </div>
-          <h5 class="text-center mt-2">{{ 'WhatDayIsItDescription' | translate }}</h5>
+          <h5 class="text-center mt-2">{{ 'MathDescription' | translate }}</h5>
 
           <div class="row mt-4">
             <div class="col-12 d-flex justify-content-center text-center mt-3">
@@ -35,8 +35,7 @@
     <!-- Board -->
     <div class="row col-12 col-lg-8 mt-5 mx-auto dark-card">
       <div *ngIf="!message">
-      <h3 class="text-center mt-3">{{'IfDayIs' | translate}}: {{currentDayLabel | translate}}</h3>
-      <h3 class="text-center mt-1 mb-3">{{daysToAddLabel}} {{question | translate}}</h3>
+      <h1 class="text-center mt-5 number-text">{{a}} {{operationSign}} {{b}} = ?</h1>
       </div>
 
       <!-- Any messages -->
@@ -48,13 +47,24 @@
       </div>
 
 
-      <!-- day buttons -->
-      <div *ngIf="!message" class="row mt-5">
-        <div *ngFor="let button of dayButtondModels" class="col-6 col-lg-6 col-md-6 col-sm-6 mb-3 mx-auto">
-          <p-button type="button" styleClass="p-button-oranged max-width" class=" max-width" (click)="check(button.id)">{{
-            button.name | translate }}</p-button>
-        </div>
-      </div>
+          <!-- my number -->
+          <div>
+            <div class="row">
+               <div class="col-12 d-flex justify-content-center text-center mt-3 p-labeled-input">
+                <p-inputNumber mode="decimal" [(ngModel)]="myNumber" name="myNumber" [style]="{'width':'300px;'}"
+                  [inputStyle]="{'width':'300px;'}" (keydown.enter)="onEnterPressed($event)"></p-inputNumber>
+              </div>
+            </div>
+
+            <!-- button -->
+            <div class="row">
+              <div class="col-12 d-flex justify-content-center text-center mt-3">
+                <p-button type="button" styleClass="p-button-oranged" (click)="check()">{{ 'Checking' |
+                  translate
+                  }}</p-button>
+              </div>
+            </div>
+          </div>
 
     </div>
   </div>
@@ -74,7 +84,7 @@
               <p-button type="button" styleClass="p-button-oranged" (click)="restart()">{{ 'Restart' | translate
                 }}</p-button>
               <p-button type="button" styleClass="p-button-danger mx-2"
-                routerLink="/what-day-is-it-settings">{{'BackToSettings'
+                routerLink="/math-settings">{{'BackToSettings'
                 | translate
                 }}</p-button>
             </div>

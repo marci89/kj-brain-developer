@@ -6,7 +6,7 @@ export interface WhatDayIsItSettingsModel {
   opportunities: number;
 }
 
-//Size
+//day type
 export enum DayType {
   Monday = 1,
   Tuesday = 2,

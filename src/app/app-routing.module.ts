@@ -23,6 +23,8 @@ import { MemoryMatrixBoardComponent } from './components/games/memory-matrix/mem
 import { MemoryMatrixSettingsComponent } from './components/games/memory-matrix/memory-matrix-settings/memory-matrix-settings.component';
 import { WhatDayIsItSettingsComponent } from './components/games/what-day-is-it/what-day-is-it-settings/what-day-is-it-settings.component';
 import { WhatDayIsItBoardComponent } from './components/games/what-day-is-it/what-day-is-it-board/what-day-is-it-board.component';
+import { MathBoardComponent } from './components/games/math/math-board/math-board.component';
+import { MathSettingsComponent } from './components/games/math/math-settings/math-settings.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -52,6 +54,8 @@ const routes: Routes = [
       { path: 'what-day-is-it', component: WhatDayIsItBoardComponent },
       { path: 'memory-number-settings', component: MemoryNumberSettingsComponent },
       { path: 'memory-number', component: MemoryNumberBoardComponent },
+      { path: 'math-settings', component: MathSettingsComponent },
+      { path: 'math', component: MathBoardComponent },
       { path: 'memory-matrix-settings', component: MemoryMatrixSettingsComponent },
       { path: 'memory-matrix', component: MemoryMatrixBoardComponent },
 
