@@ -163,6 +163,28 @@
 
   "WhatDayIsIt": "What day is it?",
   "WhatDayIsItDescription": "Guess which day it was/will be from the statement.",
+  "TimeInSecond": "Time in seconds",
+  "Monday": "Monday",
+  "Tuesday": "Tuesday",
+  "Wednesday": "Wednesday",
+  "Thursday": "Thursday",
+  "Friday": "Friday",
+  "Saturday": "Saturday",
+  "Sunday": "Sunday",
+
+  "monday": "monday",
+  "tuesday": "tuesday",
+  "wednesday": "wednesday",
+  "thursday": "thursday",
+  "friday": "friday",
+  "saturday": "saturday",
+  "sunday": "sunday",
+
+  "SpecifiedTimeDescription": "Be careful! The task must be completed within a specified time.",
+
+  "IfDayIs": "If today is",
+  "WhatDayWillBe": "days after What day will it be?",
+  "WhatDayWas": "days before What day was it?",
 
   "MemoryNumber": "Memory number",
   "MemoryNumberDescription": "You will see a number and then rely on your memory to write it down",

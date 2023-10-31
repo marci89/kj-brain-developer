@@ -164,6 +164,30 @@
 
   "WhatDayIsIt": "Milyen nap van?",
   "WhatDayIsItDescription": "Találd ki az állításból melyik nap volt/lesz.",
+  "TimeInSecond": "Idő másodpercben",
+
+  "Monday": "Hétfő",
+  "Tuesday": "Kedd",
+  "Wednesday": "Szerda",
+  "Thursday": "Csütörtök",
+  "Friday": "Péntek",
+  "Saturday": "Szombat",
+  "Sunday": "Vasárnap",
+
+  "monday": "hétfő",
+  "tuesday": "kedd",
+  "wednesday": "szerda",
+  "thursday": "csütörtök",
+  "friday": "péntek",
+  "saturday": "szombat",
+  "sunday": "vasárnap",
+
+  "SpecifiedTimeDescription": "Vigyázz! Meghatározott időn belül kell teljesíteni a feladatot.",
+
+  "IfDayIs": "Ha a mai nap",
+  "WhatDayWillBe": "nap múlva milyen nap lesz?",
+  "WhatDayWas": "nappal korábban milyen nap volt?",
+
 
   "MemoryNumber": "Szám memória",
   "MemoryNumberDescription": "Látni fog egy számot, majd a memóriájára hagyatkozva lekell írnia",

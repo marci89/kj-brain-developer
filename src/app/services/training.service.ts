@@ -9,6 +9,8 @@ import { MemoryNumberSettingsModel } from '../interfaces/games/memory-number.int
 import { MemoryNumberService } from './games/memory-number.service';
 import { MemoryMatrixService } from './games/memory-matrix.service';
 import { MemoryMatrixSettingsModel } from '../interfaces/games/memory-matrix.interface';
+import { WhatDayIsItSettingsModel } from '../interfaces/games/what-day-is-it.interface';
+import { WhatDayIsItService } from './games/what-day-is-it.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +23,7 @@ export class TrainingService {
   //settings
   memoryCardSettings: MemoryCardSettingsModel = {} as MemoryCardSettingsModel;
   memorySoundSettings: MemorySoundSettingsModel = {} as MemorySoundSettingsModel;
+  whatDayIsItSettings: WhatDayIsItSettingsModel = {} as WhatDayIsItSettingsModel;
   memoryNumberSettings: MemoryNumberSettingsModel = {} as MemoryNumberSettingsModel;
   memoryMatrixSettings: MemoryMatrixSettingsModel = {} as MemoryMatrixSettingsModel;
 
@@ -32,6 +35,7 @@ export class TrainingService {
     private router: Router,
     private memoryCardService: MemoryCardService,
     private memorySoundService: MemorySoundService,
+    private whatDayIsItService : WhatDayIsItService,
     private memoryNumberService: MemoryNumberService,
     private memoryMatrixService: MemoryMatrixService,
   ) { }
@@ -65,6 +69,11 @@ export class TrainingService {
 
   //start memory card game
   startWhatDayIsItGame(){
+    this.whatDayIsItSettings.isPracticeMode = false;
+    this.whatDayIsItSettings.opportunities = 1;
+
+    this.whatDayIsItService.setSettings(this.whatDayIsItSettings);
+    this.router.navigate(['what-day-is-it']);
   }
 
   //start memory number game

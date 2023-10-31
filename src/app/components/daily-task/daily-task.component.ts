@@ -42,7 +42,6 @@ export class DailyTaskComponent implements OnInit {
     this.statisticsService.readDailyTraining().subscribe({
       next: dailyTraining => {
         this.dailyTrainingStatistics = dailyTraining;
-        console.log(dailyTraining)
         this.trainingService.dailyTrainingStatistics = dailyTraining;
         this.checkTasks();
       },

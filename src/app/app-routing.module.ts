@@ -21,6 +21,8 @@ import { MemoryNumberSettingsComponent } from './components/games/memory-number/
 import { MemoryNumberBoardComponent } from './components/games/memory-number/memory-number-board/memory-number-board.component';
 import { MemoryMatrixBoardComponent } from './components/games/memory-matrix/memory-matrix-board/memory-matrix-board.component';
 import { MemoryMatrixSettingsComponent } from './components/games/memory-matrix/memory-matrix-settings/memory-matrix-settings.component';
+import { WhatDayIsItSettingsComponent } from './components/games/what-day-is-it/what-day-is-it-settings/what-day-is-it-settings.component';
+import { WhatDayIsItBoardComponent } from './components/games/what-day-is-it/what-day-is-it-board/what-day-is-it-board.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -46,6 +48,8 @@ const routes: Routes = [
       { path: 'memory-card', component: MemoryCardBoardComponent },
       { path: 'memory-sound-settings', component: MemorySoundSettingsComponent },
       { path: 'memory-sound', component: MemorySoundBoardComponent },
+      { path: 'what-day-is-it-settings', component: WhatDayIsItSettingsComponent },
+      { path: 'what-day-is-it', component: WhatDayIsItBoardComponent },
       { path: 'memory-number-settings', component: MemoryNumberSettingsComponent },
       { path: 'memory-number', component: MemoryNumberBoardComponent },
       { path: 'memory-matrix-settings', component: MemoryMatrixSettingsComponent },
