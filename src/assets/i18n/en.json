@@ -137,6 +137,10 @@
   "PictureType": "Picture type",
   "Moves": "Moves",
   "MemoryCardFinish":"Congratulations! You've successfully solved it in this many steps",
+  "Ball": "Ball",
+  "Galaxy": "Galaxy",
+  "Object": "Object",
+  "Plant": "Plant",
 
   "MemorySound": "Memory sound",
   "MemorySoundDescription":"You will hear sounds one after the other and have to imitate them in the correct order.",

@@ -19,7 +19,7 @@ import { MathService } from './games/math.service';
 })
 export class TrainingService {
   //max values
-   PICTURE_TYPE_MAX_VALUE : number = 1;
+   PICTURE_TYPE_MAX_VALUE : number = 6;
    SOUND_TYPE_MAX_VALUE : number = 5;
 
   //settings

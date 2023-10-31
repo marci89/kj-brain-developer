@@ -36,8 +36,27 @@ readMemorySoundModelById(id: number) {
 
   //Init sound models
   initMemorySoundModel() {
-    const animal: MemorySoundModel = {
+    const pet: MemorySoundModel = {
       id: 1,
+      name: "Pet",
+      voices: [
+        {
+          id: 1,
+          name: "GuineaPig"
+        },
+        {
+          id: 2,
+          name: "Dog"
+        },
+        {
+          id: 3,
+          name: "Cat"
+        }
+      ],
+    };
+
+    const animal: MemorySoundModel = {
+      id: 2,
       name: "Animal",
       voices: [
         {
@@ -56,7 +75,7 @@ readMemorySoundModelById(id: number) {
     };
 
     const bird: MemorySoundModel = {
-      id: 2,
+      id: 3,
       name: "Bird",
       voices: [
         {
@@ -75,7 +94,7 @@ readMemorySoundModelById(id: number) {
     };
 
     const farm: MemorySoundModel = {
-      id: 3,
+      id: 4,
       name: "Farm",
       voices: [
         {
@@ -94,7 +113,7 @@ readMemorySoundModelById(id: number) {
     };
 
     const instrument: MemorySoundModel = {
-      id: 4,
+      id: 5,
       name: "Instrument",
       voices: [
         {
@@ -112,29 +131,10 @@ readMemorySoundModelById(id: number) {
       ],
     };
 
-    const pet: MemorySoundModel = {
-      id: 5,
-      name: "Pet",
-      voices: [
-        {
-          id: 1,
-          name: "GuineaPig"
-        },
-        {
-          id: 2,
-          name: "Dog"
-        },
-        {
-          id: 3,
-          name: "Cat"
-        }
-      ],
-    };
-
+    this.memorySoundModels.push(pet);
     this.memorySoundModels.push(animal);
     this.memorySoundModels.push(bird);
     this.memorySoundModels.push(farm);
     this.memorySoundModels.push(instrument);
-    this.memorySoundModels.push(pet);
   }
 }

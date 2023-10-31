@@ -68,6 +68,41 @@ export class MemoryCardService {
         isNightmare: false
       };
 
+      const object: MemoryCardPictureModel = {
+        id: 2,
+        name: "Object",
+        isNightmare: false
+      };
+
+      const plant: MemoryCardPictureModel = {
+        id: 3,
+        name: "Plant",
+        isNightmare: false
+      };
+
+      const ball: MemoryCardPictureModel = {
+        id: 4,
+        name: "Ball",
+        isNightmare: true
+      };
+
+      const cat: MemoryCardPictureModel = {
+        id: 5,
+        name: "Cat",
+        isNightmare: true
+      };
+
+      const galaxy: MemoryCardPictureModel = {
+        id: 6,
+        name: "Galaxy",
+        isNightmare: true
+      };
+
       this.memoryCardPictureModels.push(animal);
+      this.memoryCardPictureModels.push(object);
+      this.memoryCardPictureModels.push(plant);
+      this.memoryCardPictureModels.push(ball);
+      this.memoryCardPictureModels.push(cat);
+      this.memoryCardPictureModels.push(galaxy);
     }
 }
