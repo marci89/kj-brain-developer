@@ -6,6 +6,8 @@
   color: white;
   position: absolute;
   padding: 10px;
+  word-wrap: break-word;
+  white-space: normal;
 
 }
 
@@ -18,7 +20,7 @@
   width: 50%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 850px) {
   .header {
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 0%;
