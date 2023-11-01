@@ -109,8 +109,8 @@ export class WhatDayIsItBoardComponent implements OnInit {
     this.currentDayLabel = this.getDayByValue(this.currentDay);
     this.calculateDay(this.currentDay, this.daysToAdd);
 
-    this.daysToAddMin += 4;
-    this.daysToAddMax -= 4;
+    this.daysToAddMin += 6;
+    this.daysToAddMax -= 6;
   }
 
 

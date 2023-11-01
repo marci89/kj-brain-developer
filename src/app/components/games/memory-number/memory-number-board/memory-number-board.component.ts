@@ -13,6 +13,7 @@ import { TrainingService } from 'src/app/services/training.service';
   styleUrls: ['./memory-number-board.component.css']
 })
 export class MemoryNumberBoardComponent implements OnInit {
+
   //is started or not
   isStarted: boolean = false;
   //is finished or not
@@ -93,6 +94,21 @@ export class MemoryNumberBoardComponent implements OnInit {
   }
 
 
+  onKeyPress(event: any) {
+
+    if(this.isNumberVisible){
+      this.myNumber = null;
+    }
+
+    if (event.keyCode === 13) {
+      if(this.myNumber === null || this.myNumber === undefined){
+        return;
+      }
+
+      this.check();
+    }
+  }
+
   // button click
   check() {
       const myNumberAsString: string = (this.myNumber ?? '').toString();
@@ -129,6 +145,7 @@ export class MemoryNumberBoardComponent implements OnInit {
 
   //set next level
   nextLevel() {
+    this.myNumber = null;
     setTimeout(() => {
       this.message = "";
       this.createNumber();

@@ -103,10 +103,10 @@ export class MathBoardComponent implements OnInit {
     }
 
 
-    this.summationMaxValue += 10;
-    this.subtractionMaxValue += 10;
-    this.divisionMaxValue += 10;
-    this.multiplicationMaxValue += 2;
+    this.summationMaxValue += 20;
+    this.subtractionMaxValue += 20;
+    this.divisionMaxValue += 20;
+    this.multiplicationMaxValue += 4;
   }
 
   createSummation() {
@@ -149,6 +149,9 @@ export class MathBoardComponent implements OnInit {
 
   onEnterPressed(event: any) {
     if (event.keyCode === 13) {
+      if(this.myNumber === null || this.myNumber === undefined){
+        return;
+      }
       this.check();
     }
   }

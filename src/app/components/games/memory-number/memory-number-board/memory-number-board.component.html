@@ -49,12 +49,13 @@
 
 
         <!-- my number -->
-        <div *ngIf="isMyNumberVisible && !message">
+        <div>
+
           <div class="row">
-            <p class="text-center">{{ 'TypingMemoryNumber' | translate }}</p>
+            <p *ngIf="isMyNumberVisible && !message" class="text-center">{{ 'TypingMemoryNumber' | translate }}</p>
             <div class="col-12 d-flex justify-content-center text-center mt-3 p-labeled-input">
-              <p-inputNumber mode="decimal" [min]="1" [(ngModel)]="myNumber" name="myNumber" [style]="{'width':'300px'}"
-                [inputStyle]="{'width':'300px'}"></p-inputNumber>
+              <p-inputNumber  #myNumberInput mode="decimal" [min]="1" [(ngModel)]="myNumber" name="myNumber" [style]="{'width':'300px'}"
+               [inputStyle]="{'width':'300px'}"(keyup)="onKeyPress($event)"></p-inputNumber>
             </div>
           </div>
 
