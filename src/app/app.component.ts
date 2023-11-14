@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
 
   //Setting the user from a cookie if the user have already logged in before
   setCurrentUser() {
-    const userString = localStorage.getItem('user');
+    const userString = localStorage.getItem('kjBrainDeveloperUser');
     if (!userString) {
       return;
     } else {
